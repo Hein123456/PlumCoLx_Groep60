@@ -81,6 +81,18 @@
     <Compile Include="UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProducts.Designer.cs">
+      <DependentUpon>UserProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserServiceRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserServiceRequest.Designer.cs">
+      <DependentUpon>UserServiceRequest.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +111,12 @@
     </Compile>
     <EmbeddedResource Include="UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProducts.resx">
+      <DependentUpon>UserProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserServiceRequest.resx">
+      <DependentUpon>UserServiceRequest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

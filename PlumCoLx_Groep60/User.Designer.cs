@@ -48,7 +48,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(1229, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(708, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,8 +62,9 @@
             // vanToolStripMenuItem
             // 
             this.vanToolStripMenuItem.Name = "vanToolStripMenuItem";
-            this.vanToolStripMenuItem.Size = new System.Drawing.Size(46, 27);
-            this.vanToolStripMenuItem.Text = "van";
+            this.vanToolStripMenuItem.Size = new System.Drawing.Size(80, 27);
+            this.vanToolStripMenuItem.Text = "Products";
+            this.vanToolStripMenuItem.Click += new System.EventHandler(this.vanToolStripMenuItem_Click);
             // 
             // navToolStripMenuItem1
             // 
@@ -74,9 +75,9 @@
             // usernameToolStripMenuItem
             // 
             this.usernameToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.usernameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(19)))), ((int)(((byte)(18)))));
+            this.usernameToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.usernameToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.usernameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(10)))), ((int)(((byte)(82)))));
+            this.usernameToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.usernameToolStripMenuItem.Name = "usernameToolStripMenuItem";
             this.usernameToolStripMenuItem.ReadOnly = true;
             this.usernameToolStripMenuItem.Size = new System.Drawing.Size(87, 27);
@@ -88,12 +89,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(19)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(1229, 640);
+            this.ClientSize = new System.Drawing.Size(708, 733);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "User";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfoUser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.User_FormClosing);

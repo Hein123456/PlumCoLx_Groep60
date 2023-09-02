@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace PlumCoLx_Groep60
 {
-    public partial class UserInfo : Form
+    public partial class UserProducts : Form
     {
-        public UserInfo()
+        public UserProducts()
         {
             InitializeComponent();
         }
 
-        private void UserInfo_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-          
+
         }
     }
 }
