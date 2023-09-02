@@ -1,7 +1,7 @@
 ﻿
 namespace PlumCoLx_Groep60
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -96,7 +96,7 @@ namespace PlumCoLx_Groep60
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,8 +111,7 @@ namespace PlumCoLx_Groep60
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
