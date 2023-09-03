@@ -14,14 +14,16 @@ namespace PlumCoLx_Groep60
 {
     public partial class Login : Form
     {
-        // create absolute path to database
-      
+        SqlConnection con = new SqlConnection();
         SqlCommand cmd;
         SqlDataAdapter adapt;
-
         public Login()
         {
             InitializeComponent();
+            // create absolute path to database
+
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,30 +39,9 @@ namespace PlumCoLx_Groep60
             // if they apper in either one create a text file with the username and date and time of login
             // when the program starts check if the text file exists and if it does show the user form or admin form depending on the text file
             // if the text file doesn't exist show the login form
+
+           
             
-            //check if file exists
-            if (File.Exists("login.txt"))
-            {
-                //read file
-                string[] lines = File.ReadAllLines("login.txt");
-                //check if user is admin
-                if (lines[0] == "admin")
-                {
-                    //show admin form
-                    Admin admin = new Admin();
-                    admin.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    //show user form
-                    User user = new User();
-                    user.Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
                 //check user login
                 String Username = textBox1.Text;
                 String Password = textBox2.Text;
@@ -73,6 +54,7 @@ namespace PlumCoLx_Groep60
                     // check if user exists
                     cmd = new SqlCommand(sql, con);
                     adapt = new SqlDataAdapter(cmd);
+                    adapt.SelectCommand.ExecuteNonQuery();
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     int count = ds.Tables[0].Rows.Count;
@@ -101,9 +83,11 @@ namespace PlumCoLx_Groep60
                         // check if admin exists
                         cmd = new SqlCommand(sql2, con);
                         adapt = new SqlDataAdapter(cmd);
+                    adapt.SelectCommand.ExecuteNonQuery();
                         DataSet ds2 = new DataSet();
                         adapt.Fill(ds2);
                         int count2 = ds2.Tables[0].Rows.Count;
+                
                         con.Close();
                         if (count2 == 1)
                         {
@@ -112,7 +96,8 @@ namespace PlumCoLx_Groep60
                             //create text file
                             using (StreamWriter sw = File.CreateText("login.txt"))
                             {
-                                sw.WriteLine("admin");
+                        
+                        sw.WriteLine("admin");
                                 sw.WriteLine(DateTime.Now);
                             }
                             //show admin form
@@ -127,8 +112,41 @@ namespace PlumCoLx_Groep60
                         }
                     
 
-                }
+                
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            //check if file exists
+           
+            if (File.Exists("login.txt"))
+                {
+                    
+                    //read file
+                    string lines = File.ReadAllText("login.txt");
+                
+                    //check if user is admin
+                    if (lines.Contains("admin"))
+                    {
+
+                        //show admin form
+                        Admin admin = new Admin();
+                    this.Hide();
+                    admin.Show();
+                        this.Hide();
+                    }
+                    else
+                     if (lines.Contains("user"))
+                    {
+                        //show user form
+                        User user = new User();
+                    this.Hide();
+                    user.Show();
+                    this.Hide();
+
+                }
+                }
         }
     }
 }
