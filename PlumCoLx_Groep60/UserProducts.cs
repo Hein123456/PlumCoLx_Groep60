@@ -146,13 +146,13 @@ namespace PlumCoLx_Groep60
                 }
                 listBox1.Items.Clear();
                     listBox1.Items.Add("Your Cart:");
-                    listBox1.Items.Add("Item: \t\t\t Quantity: \t Price:");
+                    listBox1.Items.Add("Item: \t\t\t\t Quantity: \t Price:");
                     for (int i = 0; i < tel; i++)
                     {
                         double sub = (Convert.ToDouble(ProductPrice[i]) * Convert.ToDouble(ProductQuantity[i]));
                         listBox1.Items.Add(ProductDes[i] + "\t\t\t" + ProductQuantity[i] + "\tR " + sub);
                     }
-                    listBox1.Items.Add("Subtotal: R" + subtotal);
+                    listBox1.Items.Add("\nSubtotal: R" + subtotal);
                 
                 }
             catch (Exception ex)
