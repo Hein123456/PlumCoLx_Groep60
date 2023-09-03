@@ -31,9 +31,17 @@ namespace PlumCoLx_Groep60
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.btnEditProduct = new System.Windows.Forms.Button();
-            this.btnRemoveProduct = new System.Windows.Forms.Button();
+            this.txtProductDesc = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.txtProductCategory = new System.Windows.Forms.TextBox();
+            this.txtProductPrice = new System.Windows.Forms.TextBox();
+            this.txtSupplierID = new System.Windows.Forms.TextBox();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.btnRemoveSup = new System.Windows.Forms.Button();
+            this.btnEditSup = new System.Windows.Forms.Button();
+            this.btnAddSup = new System.Windows.Forms.Button();
+            this.txtDateTime = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,47 +62,131 @@ namespace PlumCoLx_Groep60
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 24;
-            this.dgvProducts.Size = new System.Drawing.Size(1576, 556);
+            this.dgvProducts.Size = new System.Drawing.Size(1576, 230);
             this.dgvProducts.TabIndex = 1;
+            this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
-            // btnAddProduct
+            // txtProductDesc
             // 
-            this.btnAddProduct.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProduct.Location = new System.Drawing.Point(17, 621);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(201, 86);
-            this.btnAddProduct.TabIndex = 2;
-            this.btnAddProduct.Text = "Add Product";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.txtProductDesc.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductDesc.Location = new System.Drawing.Point(241, 449);
+            this.txtProductDesc.Name = "txtProductDesc";
+            this.txtProductDesc.Size = new System.Drawing.Size(218, 26);
+            this.txtProductDesc.TabIndex = 21;
+            this.txtProductDesc.Text = "Description";
             // 
-            // btnEditProduct
+            // txtProductName
             // 
-            this.btnEditProduct.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProduct.Location = new System.Drawing.Point(224, 621);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(201, 86);
-            this.btnEditProduct.TabIndex = 3;
-            this.btnEditProduct.Text = "Edit Product";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.txtProductName.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Location = new System.Drawing.Point(241, 477);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(218, 26);
+            this.txtProductName.TabIndex = 20;
+            this.txtProductName.Text = "Name";
             // 
-            // btnRemoveProduct
+            // txtProductCategory
             // 
-            this.btnRemoveProduct.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveProduct.Location = new System.Drawing.Point(431, 621);
-            this.btnRemoveProduct.Name = "btnRemoveProduct";
-            this.btnRemoveProduct.Size = new System.Drawing.Size(201, 87);
-            this.btnRemoveProduct.TabIndex = 4;
-            this.btnRemoveProduct.Text = "Remove Product";
-            this.btnRemoveProduct.UseVisualStyleBackColor = true;
+            this.txtProductCategory.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductCategory.Location = new System.Drawing.Point(241, 505);
+            this.txtProductCategory.Name = "txtProductCategory";
+            this.txtProductCategory.Size = new System.Drawing.Size(218, 26);
+            this.txtProductCategory.TabIndex = 19;
+            this.txtProductCategory.Text = "Category";
+            // 
+            // txtProductPrice
+            // 
+            this.txtProductPrice.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductPrice.Location = new System.Drawing.Point(241, 533);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Size = new System.Drawing.Size(218, 26);
+            this.txtProductPrice.TabIndex = 18;
+            this.txtProductPrice.Text = "Price";
+            // 
+            // txtSupplierID
+            // 
+            this.txtSupplierID.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupplierID.Location = new System.Drawing.Point(241, 421);
+            this.txtSupplierID.Name = "txtSupplierID";
+            this.txtSupplierID.Size = new System.Drawing.Size(218, 26);
+            this.txtSupplierID.TabIndex = 17;
+            this.txtSupplierID.Text = "Supplier ID";
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductID.Location = new System.Drawing.Point(241, 393);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(218, 26);
+            this.txtProductID.TabIndex = 16;
+            this.txtProductID.Text = "Product ID";
+            // 
+            // btnRemoveSup
+            // 
+            this.btnRemoveSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveSup.Location = new System.Drawing.Point(241, 275);
+            this.btnRemoveSup.Name = "btnRemoveSup";
+            this.btnRemoveSup.Size = new System.Drawing.Size(218, 85);
+            this.btnRemoveSup.TabIndex = 15;
+            this.btnRemoveSup.Text = "Remove supplier";
+            this.btnRemoveSup.UseVisualStyleBackColor = true;
+            this.btnRemoveSup.Click += new System.EventHandler(this.btnRemoveSup_Click);
+            // 
+            // btnEditSup
+            // 
+            this.btnEditSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSup.Location = new System.Drawing.Point(17, 393);
+            this.btnEditSup.Name = "btnEditSup";
+            this.btnEditSup.Size = new System.Drawing.Size(218, 88);
+            this.btnEditSup.TabIndex = 14;
+            this.btnEditSup.Text = "Edit Supplier";
+            this.btnEditSup.UseVisualStyleBackColor = true;
+            this.btnEditSup.Click += new System.EventHandler(this.btnEditSup_Click);
+            // 
+            // btnAddSup
+            // 
+            this.btnAddSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSup.Location = new System.Drawing.Point(17, 275);
+            this.btnAddSup.Name = "btnAddSup";
+            this.btnAddSup.Size = new System.Drawing.Size(218, 85);
+            this.btnAddSup.TabIndex = 13;
+            this.btnAddSup.Text = "Add supplier";
+            this.btnAddSup.UseVisualStyleBackColor = true;
+            this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
+            // 
+            // txtDateTime
+            // 
+            this.txtDateTime.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateTime.Location = new System.Drawing.Point(241, 597);
+            this.txtDateTime.Name = "txtDateTime";
+            this.txtDateTime.Size = new System.Drawing.Size(218, 26);
+            this.txtDateTime.TabIndex = 22;
+            this.txtDateTime.Text = "Dte and Time";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(241, 565);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(218, 26);
+            this.txtQuantity.TabIndex = 23;
+            this.txtQuantity.Text = "Quantity";
             // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1605, 788);
-            this.Controls.Add(this.btnRemoveProduct);
-            this.Controls.Add(this.btnEditProduct);
-            this.Controls.Add(this.btnAddProduct);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.txtDateTime);
+            this.Controls.Add(this.txtProductDesc);
+            this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.txtProductCategory);
+            this.Controls.Add(this.txtProductPrice);
+            this.Controls.Add(this.txtSupplierID);
+            this.Controls.Add(this.txtProductID);
+            this.Controls.Add(this.btnRemoveSup);
+            this.Controls.Add(this.btnEditSup);
+            this.Controls.Add(this.btnAddSup);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.label1);
             this.Name = "Products";
@@ -109,8 +201,16 @@ namespace PlumCoLx_Groep60
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button btnEditProduct;
-        private System.Windows.Forms.Button btnRemoveProduct;
+        private System.Windows.Forms.TextBox txtProductDesc;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.TextBox txtProductCategory;
+        private System.Windows.Forms.TextBox txtProductPrice;
+        private System.Windows.Forms.TextBox txtSupplierID;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.Button btnRemoveSup;
+        private System.Windows.Forms.Button btnEditSup;
+        private System.Windows.Forms.Button btnAddSup;
+        private System.Windows.Forms.TextBox txtDateTime;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }

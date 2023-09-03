@@ -83,8 +83,8 @@ namespace PlumCoLx_Groep60
             // plumbersToolStripMenuItem
             // 
             this.plumbersToolStripMenuItem.Name = "plumbersToolStripMenuItem";
-            this.plumbersToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.plumbersToolStripMenuItem.Text = "Plumbers";
+            this.plumbersToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.plumbersToolStripMenuItem.Text = "Employee";
             this.plumbersToolStripMenuItem.Click += new System.EventHandler(this.plumbersToolStripMenuItem_Click);
             // 
             // clientsToolStripMenuItem
