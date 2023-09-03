@@ -59,12 +59,14 @@ namespace PlumCoLx_Groep60
                     adapt.Fill(ds);
                     int count = ds.Tables[0].Rows.Count;
             // get userID from database
-            int id = (int)ds.Tables[0].Rows[0]["ClientID"];
-                    con.Close();
-                    if (count == 1)
+            con.Close();
+
+            if (count == 1)
                     {
-                        //user exists
-                        userExists = true;
+
+                int id = (int)ds.Tables[0].Rows[0]["ClientID"];
+                //user exists
+                userExists = true;
                         //create text file
                         // owerwrite file if it exists
                         string path = "login.txt";
@@ -76,10 +78,12 @@ namespace PlumCoLx_Groep60
                             sw.WriteLine("user");
                             sw.WriteLine(DateTime.Now);
                         }
-                        //show user form
-                        User user = new User();
+                //show user form
+               
+                User user = new User();
                         user.Show();
                         this.Hide();
+
                     }
                     else
                     {
