@@ -25,7 +25,7 @@ namespace PlumCoLx_Groep60
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // get user information for text boxes
+            // get user information for text boxes  ujkghiu
             String Username = textBox1.Text;
             String Password = textBox2.Text;
             String Address = textBox4.Text;
