@@ -17,7 +17,7 @@ namespace PlumCoLx_Groep60
         SqlCommand cmd;
         SqlDataAdapter adapt;
         string[] ProductID = new string[1];
-        
+        string[] ProductDes = new string[1];
         int[] ProductQuantity = new int[1];
         double subtotal = 0;
        
@@ -89,7 +89,7 @@ namespace PlumCoLx_Groep60
         {
             //get selected product id based on the description
             string id = "";
-            string price = "";
+            double price = 0;
             string description = "";
             try
             {
@@ -101,7 +101,7 @@ namespace PlumCoLx_Groep60
                 DataSet ds = new DataSet();
                 adapt.Fill(ds);
                 id = ds.Tables[0].Rows[0]["productId"].ToString();
-                price = ds.Tables[0].Rows[0]["Price"].ToString();
+                price = Convert.ToDouble(ds.Tables[0].Rows[0]["Price"].ToString());
                 description = ds.Tables[0].Rows[0]["Description"].ToString();
                 con.Close();
             }
@@ -115,12 +115,13 @@ namespace PlumCoLx_Groep60
                 {
                     ProductID[0] = id;
                     ProductQuantity[0] = 1;
+                    ProductDes[0] = description;
                     subtotal += Convert.ToDouble(price);
                 }
                 else
                 {
 
-                    if (ProductID.Contains(id))
+                    if (ProductID.Contains(id.ToString()))
                     {
                        
                         ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
@@ -132,6 +133,8 @@ namespace PlumCoLx_Groep60
                         //grow the array if the user adds a product that is already in the cart
                         Array.Resize(ref ProductQuantity, ProductQuantity.Length + 1);
                         Array.Resize(ref ProductID, ProductID.Length + 1);
+                        Array.Resize(ref ProductDes, ProductDes.Length + 1);
+                        ProductDes.Append(description);
                         ProductID.Append(id);
                         ProductQuantity.Append(1);
                         subtotal += Convert.ToDouble(price);
@@ -143,8 +146,9 @@ namespace PlumCoLx_Groep60
                     for (int i = 0; i < ProductID.Length; i++)
                     {
                         double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
-                        listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub);
+                        listBox1.Items.Add(ProductDes[i] + "\t" + ProductQuantity[i] + "\t" + sub);
                     }
+                    listBox1.Items.Add("Subtotal: " + subtotal);
                 }
                 }
             catch (Exception ex)
