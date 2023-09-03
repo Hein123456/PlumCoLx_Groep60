@@ -48,7 +48,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(708, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(708, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,8 +69,9 @@
             // navToolStripMenuItem1
             // 
             this.navToolStripMenuItem1.Name = "navToolStripMenuItem1";
-            this.navToolStripMenuItem1.Size = new System.Drawing.Size(46, 27);
-            this.navToolStripMenuItem1.Text = "nav";
+            this.navToolStripMenuItem1.Size = new System.Drawing.Size(127, 27);
+            this.navToolStripMenuItem1.Text = "Request Service";
+            this.navToolStripMenuItem1.Click += new System.EventHandler(this.navToolStripMenuItem1_Click);
             // 
             // usernameToolStripMenuItem
             // 

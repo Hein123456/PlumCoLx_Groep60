@@ -46,5 +46,10 @@ namespace PlumCoLx_Groep60
            Products.Show();
             Info.Hide();
         }
+
+        private void navToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
