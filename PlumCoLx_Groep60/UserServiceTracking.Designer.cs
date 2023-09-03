@@ -37,12 +37,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(368, 504);
+            this.button1.Location = new System.Drawing.Point(787, 504);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 36);
             this.button1.TabIndex = 31;
             this.button1.Text = "Show all Services";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -52,6 +53,7 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "Show Pending Services";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -70,14 +72,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(598, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(950, 373);
             this.dataGridView1.TabIndex = 28;
             // 
             // UserServiceTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 591);
+            this.ClientSize = new System.Drawing.Size(1073, 591);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
@@ -85,6 +87,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserServiceTracking";
             this.Text = "UserServiceTracking";
+            this.Load += new System.EventHandler(this.UserServiceTracking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
