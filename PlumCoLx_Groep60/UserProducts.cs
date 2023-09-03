@@ -150,7 +150,7 @@ namespace PlumCoLx_Groep60
                     for (int i = 0; i < tel; i++)
                     {
                         double sub = (Convert.ToDouble(ProductPrice[i]) * Convert.ToDouble(ProductQuantity[i]));
-                        listBox1.Items.Add(ProductDes[i] + "\t\t\t" + ProductQuantity[i] + "\tR " + sub);
+                        listBox1.Items.Add(ProductDes[i] + "\t\t" + ProductQuantity[i] + "\tR " + sub);
                     }
                     listBox1.Items.Add("\nSubtotal: R" + subtotal);
                 
@@ -168,10 +168,20 @@ namespace PlumCoLx_Groep60
         {
             // if the user presses the button reset clear all items form the cart.
             textBox1.Text = "";
-            ProductID = null;
-            ProductQuantity = null;
+            ProductID = new string[20];
+            ProductQuantity = new int[20];
+
+            ProductDes = new string[20];
+            ProductPrice = new double[20];
+            tel = 0;
+
             subtotal = 0;
             listBox1.Items.Clear();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
 
         }
     }
