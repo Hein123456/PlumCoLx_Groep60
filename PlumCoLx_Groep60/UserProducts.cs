@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PlumCoLx_Groep60
 {
-    public partial class Login : Form
+    public partial class UserProducts : Form
     {
-        public Login()
+        public UserProducts()
         {
             InitializeComponent();
         }
@@ -20,13 +20,6 @@ namespace PlumCoLx_Groep60
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            User form = new User();
-            form.Show();
-            this.Hide();
         }
     }
 }
