@@ -68,7 +68,7 @@ namespace PlumCoLx_Groep60
                
                     con.Open();
                     //sql to check if user exists
-                    string sql = "SELECT * FROM Client WHERE Username = '" + Username + "' AND Password = '" + Password + "'";
+                    string sql = "SELECT * FROM ClientID WHERE name = '" + Username + "' AND Password = '" + Password + "'";
                     // check if user exists
                     cmd = new SqlCommand(sql, con);
                     adapt = new SqlDataAdapter(cmd);
@@ -96,7 +96,7 @@ namespace PlumCoLx_Groep60
                         //check if admin exists
                         con.Open();
                         //sql to check if admin exists
-                        string sql2 = "SELECT * FROM Admin WHERE Username = '" + Username + "' AND Password = '" + Password + "'";
+                        string sql2 = "SELECT * FROM Admin WHERE Name = '" + Username + "' AND Password = '" + Password + "'";
                         // check if admin exists
                         cmd = new SqlCommand(sql2, con);
                         adapt = new SqlDataAdapter(cmd);
