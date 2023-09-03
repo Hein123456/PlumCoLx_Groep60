@@ -16,10 +16,11 @@ namespace PlumCoLx_Groep60
         SqlConnection con = new SqlConnection();
         SqlCommand cmd;
         SqlDataAdapter adapt;
-        string[] ProductID = new string[1];
-        string[] ProductDes = new string[1];
-        int[] ProductQuantity = new int[1];
-        double[] ProductPrice = new double[1];
+        string[] ProductID = new string[20];
+        string[] ProductDes = new string[20];
+        int[] ProductQuantity = new int[20];
+        double[] ProductPrice = new double[20];
+        int tel = 0;
         double subtotal = 0;
        
         public UserProducts()
@@ -119,6 +120,7 @@ namespace PlumCoLx_Groep60
                     ProductDes[0] = description;
                     ProductPrice[0] = price;
                     subtotal += Convert.ToDouble(price);
+                    tel++;
                 }
                 else
                 {
@@ -133,15 +135,13 @@ namespace PlumCoLx_Groep60
                     {
                         // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
                         //grow the array if the user adds a product that is already in the cart
-                        Array.Resize(ref ProductQuantity, ProductQuantity.Length + 1);
-                        Array.Resize(ref ProductID, ProductID.Length + 1);
-                        Array.Resize(ref ProductDes, ProductDes.Length + 1);
-                        Array.Resize(ref ProductPrice, ProductPrice.Length + 1);
-                        ProductDes[ProductDes.Length+1] =(description);
-                        ProductID[ProductID.Length+1]=(id);
-                        ProductQuantity[ProductQuantity.Length+1]=(1);
-                        ProductPrice[ProductPrice.Length + 1] = (price);
+                       
+                        ProductDes[tel] =(description);
+                        ProductID[tel] =(id);
+                        ProductQuantity[tel]=(1);
+                        ProductPrice[tel] = (price);
                         subtotal += Convert.ToDouble(price);
+                        tel++;
                     }
                 }
                 listBox1.Items.Clear();
