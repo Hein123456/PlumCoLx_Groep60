@@ -129,5 +129,45 @@ namespace PlumCoLx_Groep60
             
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //check if user has pending transaction in database in Jobs table
+            con.Open();
+            string query = "SELECT * FROM Jobs WHERE ClientID = '" + txtID.Text + "' AND Status <> 'Done'";
+            adapt = new SqlDataAdapter(query, con);
+            adapt.SelectCommand.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+            adapt.Fill(ds, "User");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                //if user has pending transaction, show message
+                MessageBox.Show("You have pending transactions, you cannot delete your account");
+            }
+            else
+            {
+                //if user has no pending transaction, delete account
+
+                //ask user if they are sure they want to delete their account
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete your account?", "Delete Account", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //delete user account
+                    con.Open();
+                     query = "DELETE FROM ClientID WHERE ClientID = '" + txtID.Text + "'";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    //go back to login screen
+                    this.Hide();
+                    Login login = new Login();
+                    login.Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do nothing
+                }
+            }
+        }
     }
 }

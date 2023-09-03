@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,11 +170,23 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "ID :";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(469, 548);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(253, 36);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Delete Account";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // UserAccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 638);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPhoneNumber);
@@ -213,5 +226,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }
