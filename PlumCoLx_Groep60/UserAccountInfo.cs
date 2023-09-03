@@ -159,6 +159,8 @@ namespace PlumCoLx_Groep60
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
+                //delete login.txt file
+                File.Delete("login.txt");
                     //go back to login screen
                     this.Hide();
                     Login login = new Login();
