@@ -121,7 +121,7 @@ namespace PlumCoLx_Groep60
                 else
                 {
 
-                    if (ProductID.Contains(id.ToString()))
+                    if (ProductID.Contains(id))
                     {
                        
                         ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
@@ -139,8 +139,8 @@ namespace PlumCoLx_Groep60
                         ProductQuantity.Append(1);
                         subtotal += Convert.ToDouble(price);
                     }
-
-                    listBox1.Items.Clear();
+                }
+                listBox1.Items.Clear();
                     listBox1.Items.Add("Your Cart:");
                     listBox1.Items.Add("Item: \t Quantity: \t Price:");
                     for (int i = 0; i < ProductID.Length; i++)
@@ -149,7 +149,7 @@ namespace PlumCoLx_Groep60
                         listBox1.Items.Add(ProductDes[i] + "\t" + ProductQuantity[i] + "\t" + sub);
                     }
                     listBox1.Items.Add("Subtotal: " + subtotal);
-                }
+                
                 }
             catch (Exception ex)
             {
