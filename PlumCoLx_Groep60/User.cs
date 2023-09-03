@@ -117,5 +117,11 @@ namespace PlumCoLx_Groep60
             AccInfo.Hide();
             Fin.Hide();
         }
+
+        private void switchUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // delete file
+            // show llogin
+        }
     }
 }
