@@ -186,11 +186,14 @@ namespace PlumCoLx_Groep60
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to checkout?", "Checkout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                string userid = "";
+                int orderID = 0;
+                string orderDes = "";
                 try
                 {
                     //get user id from login.txt
                     string[] lines = File.ReadAllLines("login.txt");
-                    string userid = lines[1];
+                     userid = lines[1];
                     con.Open();
                     //get next order number
                     string sql = "SELECT MAX(OrderID) FROM Product_log";
@@ -199,26 +202,34 @@ namespace PlumCoLx_Groep60
                     adapt.SelectCommand.ExecuteNonQuery();
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
-                    int orderID = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString()) + 1;
+                     orderID = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString()) + 1;
 
-                    string orderDes = "";
-                    for (int i = 0; i < tel; i++) { 
-                    orderDes += ProductID[i] + " " + ProductQuantity[i] + ", ";
+                   
+                    for (int i = 0; i < tel; i++)
+                    {
+                        orderDes += ProductID[i] + " " + ProductQuantity[i] + ", ";
                     }
-                    con.Close();
+                   con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+                try { 
+                MessageBox.Show(orderID + "," + Convert.ToInt32(userid) + ", '" + DateTime.Now + "', " + subtotal + ", 'Pending', '" + orderDes);
                     con.Open();
-                    string sql2 = "INSERT INTO Product_log (OrderID, ClientID, OrderDate, Total, Status, Description) " +
-                                  "VALUES (@OrderID, @ClientID, @OrderDate, @Total, @Status, @Description)";
-                    cmd = new SqlCommand(sql2, con);
+                     string sql2 = "INSERT INTO Product_log (OrderID, ClientID, OrderDate, Total, Status, Description) " +
+                                   "VALUES (@OrderID, @ClientID, @OrderDate, @Total, @Status, @Description)";
+                     cmd = new SqlCommand(sql2, con);
 
-                    // Assuming orderID is an integer, userid is an integer, and subtotal is a decimal
-                    cmd.Parameters.AddWithValue("@OrderID", orderID);
-                    cmd.Parameters.AddWithValue("@ClientID", Convert.ToInt32(userid));
-                    cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@Total", subtotal);
-                    cmd.Parameters.AddWithValue("@Status", "Pending");
-                    cmd.Parameters.AddWithValue("@Description", orderDes);
-
+                     // Assuming orderID is an integer, userid is an integer, and subtotal is a decimal
+                     cmd.Parameters.AddWithValue("@OrderID", orderID);
+                     cmd.Parameters.AddWithValue("@ClientID", Convert.ToInt32(userid));
+                     cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                     cmd.Parameters.AddWithValue("@Total", subtotal);
+                     cmd.Parameters.AddWithValue("@Status", "Pending");
+                     cmd.Parameters.AddWithValue("@Description", orderDes);
+                    
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Order Placed");
