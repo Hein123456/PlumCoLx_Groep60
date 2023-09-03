@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace PlumCoLx_Groep60
 {
@@ -68,7 +69,7 @@ namespace PlumCoLx_Groep60
             //update user info at client id that is received from txtID
             // display user info in datagridview
             con.Open();
-            string query = "UPDATE ClientID SET name = '" + txtName.Text + "', phone_Num = '" + txtPhoneNumber.Text + "', Address = '" + txtAddress.Text + "', Password = '" + txtPassword.Text + "' WHERE ClientID = '" + txtID.Text + "'";
+            string query = "UPDATE ClientID SET name = '" + txtName.Text + "', phone_Num = '" + txtPhoneNumber.Text + "', Address = '" + txtAddress.Text + "', Password = '" + txtPassword.Text + "' WHERE ClientID = " + int.Parse(txtID.Text) + "";
             SqlDataAdapter adapt = new SqlDataAdapter(query, con);
             adapt.UpdateCommand.ExecuteNonQuery();
             string query1 = "SELECT * FROM ClientID WHERE ClientID = '" + txtID.Text + "'";
