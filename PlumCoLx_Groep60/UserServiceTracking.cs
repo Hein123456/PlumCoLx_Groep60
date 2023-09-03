@@ -93,7 +93,7 @@ namespace PlumCoLx_Groep60
             {
                 con.Open();
                 //show only pending service requests
-                String query = "select * from Jobs where ClientID = '" + userid + "' and Status = 'Pending'";
+                String query = "select * from Jobs where ClientID = '" + userid + "' and status <> 'Done'";
               
                 cmd = new SqlCommand(query, con);
                 adapt = new SqlDataAdapter(cmd);
@@ -104,18 +104,7 @@ namespace PlumCoLx_Groep60
                 dataGridView1.DataMember = "jobs";
                 con.Close();
                 //show only pending service requests'
-                String query2 = "select * from Joblog where ClientID = '" + userid + "' and Status = 'Pending'";
-                
-                con.Close();
-                con.Open();
-                cmd = new SqlCommand(query2, con);
-                adapt = new SqlDataAdapter(cmd);
-                adapt.SelectCommand.ExecuteNonQuery();
-
-                adapt.Fill(ds, "jobs");
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "jobs";
-                con.Close();
+               
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
