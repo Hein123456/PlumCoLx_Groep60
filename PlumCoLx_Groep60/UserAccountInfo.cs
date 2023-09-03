@@ -88,13 +88,14 @@ namespace PlumCoLx_Groep60
             adapt.Fill(ds, "User");
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "user";
-            con.Close();
-            // insert user information from datagridview into textboxes
-            txtID.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();  
+            txtID.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
             txtName.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
             txtPhoneNumber.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
             txtAddress.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
             txtPassword.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
+            con.Close();
+            // insert user information from datagridview into textboxes
+            
 
         }
     }
