@@ -50,13 +50,27 @@ namespace PlumCoLx_Groep60
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // if the user clicks on a product display that items description in the text box
-            textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();    
-            
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            {
+                // Get the value from the first column of the selected row
+                object value = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+
+                // Check if the value is not null before converting to string
+                if (value != null)
+                {
+                    textBox1.Text = value.ToString();
+                }
+                else
+                {
+                    textBox1.Text = string.Empty; // Set to an empty string if the value is null
+                }
+            }
+
             // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
             // if the user presses the button reset clear all items form the cart.
             // if the user clicks on checkout then a message box shoud display a summary of products aswell as totals and ask the user if they want to checkout
             // whan the user checks out the oerder shoul be added to the Product_log table with a unique integer order number and the date and time of the order along with the client id, subtotal and the status as pending with a description of the products the customer ordere by means of a list of product ids and quantities
-           
+
         }
     }
 }
