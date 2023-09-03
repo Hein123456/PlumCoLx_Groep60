@@ -145,6 +145,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserAccountInfo";
             this.Text = "UserFinancial";
+            this.Load += new System.EventHandler(this.UserAccountInfo_Load);
+            this.Shown += new System.EventHandler(this.UserAccountInfo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
