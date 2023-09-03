@@ -50,7 +50,7 @@ namespace PlumCoLx_Groep60
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // if the user clicks on a product display that items description in the text box
-            textBox1.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();    
+            textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();    
             
             // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
             // if the user presses the button reset clear all items form the cart.
