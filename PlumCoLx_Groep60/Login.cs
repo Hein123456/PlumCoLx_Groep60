@@ -58,16 +58,21 @@ namespace PlumCoLx_Groep60
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     int count = ds.Tables[0].Rows.Count;
+            // get userID from database
+            int id = (int)ds.Tables[0].Rows[0]["ClientID"];
                     con.Close();
                     if (count == 1)
                     {
                         //user exists
                         userExists = true;
                         //create text file
-                        using (StreamWriter sw = File.CreateText("login.txt"))
+                        // owerwrite file if it exists
+                        string path = "login.txt";
+                using (StreamWriter sw = File.CreateText(path))
                         {
                     // write username form text box to file
                     sw.WriteLine(Username);
+                    sw.WriteLine(id);
                             sw.WriteLine("user");
                             sw.WriteLine(DateTime.Now);
                         }
