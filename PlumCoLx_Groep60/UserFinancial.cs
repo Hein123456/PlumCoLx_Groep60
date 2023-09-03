@@ -52,7 +52,7 @@ namespace PlumCoLx_Groep60
             {
                 con.Open();
                 // display all where the status is Waiting For Payment and create a new field with the total cost of the service
-                String query = "select *, (select sum(ServiceCost) from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment') as TotalCost from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment'";
+                String query = "select *, (select sum(Total) from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment') as TotalCost from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment'";
         
                 cmd = new SqlCommand(query, con);
                 adapt = new SqlDataAdapter(cmd);
