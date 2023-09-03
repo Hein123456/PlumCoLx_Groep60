@@ -117,6 +117,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAccountInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccountInfo.Designer.cs">
+      <DependentUpon>UserAccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserFinancial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFinancial.Designer.cs">
+      <DependentUpon>UserFinancial.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </Compile>
     <Compile Include="UserServiceRequest.Designer.cs">
       <DependentUpon>UserServiceRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserServiceTracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserServiceTracking.Designer.cs">
+      <DependentUpon>UserServiceTracking.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
@@ -172,6 +190,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserAccountInfo.resx">
+      <DependentUpon>UserAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFinancial.resx">
+      <DependentUpon>UserFinancial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserServiceRequest.resx">
       <DependentUpon>UserServiceRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserServiceTracking.resx">
+      <DependentUpon>UserServiceTracking.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

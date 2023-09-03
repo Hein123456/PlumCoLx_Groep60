@@ -15,6 +15,9 @@ namespace PlumCoLx_Groep60
         UserInfo Info = new UserInfo();
         UserProducts Products = new UserProducts();
         UserServiceRequest SR = new UserServiceRequest();
+        UserAccountInfo AccInfo = new UserAccountInfo();
+        UserFinancial Fin = new UserFinancial();
+        UserServiceTracking TS = new UserServiceTracking();
         public User()
         {
             InitializeComponent();
@@ -26,6 +29,10 @@ namespace PlumCoLx_Groep60
            Info.MdiParent = this;
             Info.Show();
             Products.Hide();
+            SR.Hide();
+            AccInfo.Hide();
+            Fin.Hide();
+            TS.Hide();
         }
 
         private void User_Load(object sender, EventArgs e)
@@ -46,6 +53,10 @@ namespace PlumCoLx_Groep60
             Products.MdiParent = this;
            Products.Show();
             Info.Hide();
+            SR.Hide();
+            AccInfo.Hide();
+            Fin.Hide();
+            TS.Hide();
         }
 
         private void navToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -53,6 +64,50 @@ namespace PlumCoLx_Groep60
             SR.MdiParent = this;
             SR.Show();
             Info.Hide();
+            Products.Hide();
+            AccInfo.Hide();
+            Fin.Hide();
+            TS.Hide();
+
+        }
+
+        private void accountInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccInfo.MdiParent = this;
+            AccInfo.Show();
+            Info.Hide();
+            Products.Hide();
+            SR.Hide();
+            Fin.Hide();
+            TS.Hide();
+        }
+
+        private void userFinancialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Fin.MdiParent = this;
+            Fin.Show();
+            Info.Hide();
+            Products.Hide();
+            SR.Hide();
+            AccInfo.Hide();
+            TS.Hide();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void trackServicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            TS.MdiParent = this;
+            TS.Show();
+            Info.Hide();
+            Products.Hide();
+            SR.Hide();
+            AccInfo.Hide();
+            Fin.Hide();
         }
     }
 }
