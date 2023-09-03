@@ -139,6 +139,7 @@ namespace PlumCoLx_Groep60
             adapt.SelectCommand.ExecuteNonQuery();
             DataSet ds = new DataSet();
             adapt.Fill(ds, "User");
+            con.Close();
             if (ds.Tables[0].Rows.Count > 0)
             {
                 //if user has pending transaction, show message
