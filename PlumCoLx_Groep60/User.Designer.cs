@@ -33,6 +33,9 @@
             this.vanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usernameToolStripMenuItem = new System.Windows.Forms.ToolStripTextBox();
+            this.accountInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userFinancialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,14 +46,18 @@
             this.navToolStripMenuItem,
             this.vanToolStripMenuItem,
             this.navToolStripMenuItem1,
-            this.usernameToolStripMenuItem});
+            this.usernameToolStripMenuItem,
+            this.accountInfoToolStripMenuItem,
+            this.userFinancialToolStripMenuItem,
+            this.trackServicesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(708, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1319, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // navToolStripMenuItem
             // 
@@ -84,13 +91,34 @@
             this.usernameToolStripMenuItem.Size = new System.Drawing.Size(87, 27);
             this.usernameToolStripMenuItem.Text = "username";
             // 
+            // accountInfoToolStripMenuItem
+            // 
+            this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
+            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(107, 27);
+            this.accountInfoToolStripMenuItem.Text = "Account Info";
+            this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
+            // 
+            // userFinancialToolStripMenuItem
+            // 
+            this.userFinancialToolStripMenuItem.Name = "userFinancialToolStripMenuItem";
+            this.userFinancialToolStripMenuItem.Size = new System.Drawing.Size(114, 27);
+            this.userFinancialToolStripMenuItem.Text = "User Financial";
+            this.userFinancialToolStripMenuItem.Click += new System.EventHandler(this.userFinancialToolStripMenuItem_Click);
+            // 
+            // trackServicesToolStripMenuItem
+            // 
+            this.trackServicesToolStripMenuItem.Name = "trackServicesToolStripMenuItem";
+            this.trackServicesToolStripMenuItem.Size = new System.Drawing.Size(114, 27);
+            this.trackServicesToolStripMenuItem.Text = "Track Services";
+            this.trackServicesToolStripMenuItem.Click += new System.EventHandler(this.trackServicesToolStripMenuItem_Click);
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(19)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(708, 733);
+            this.ClientSize = new System.Drawing.Size(1319, 936);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.IsMdiContainer = true;
@@ -115,5 +143,8 @@
         private System.Windows.Forms.ToolStripMenuItem vanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem navToolStripMenuItem1;
         private System.Windows.Forms.ToolStripTextBox usernameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userFinancialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trackServicesToolStripMenuItem;
     }
 }
