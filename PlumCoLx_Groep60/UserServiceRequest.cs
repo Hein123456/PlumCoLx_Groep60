@@ -81,7 +81,8 @@ namespace PlumCoLx_Groep60
                     cmd.Parameters.AddWithValue("@Status", "Pending");
                     cmd.Parameters.AddWithValue("@Description", orderDes);
 
-                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.InsertCommand.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Order Placed");
                     textBox1.Text = "";
