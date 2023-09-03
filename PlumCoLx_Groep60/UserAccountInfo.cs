@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,8 +73,10 @@ namespace PlumCoLx_Groep60
             {
                 con.Open();
                 string query = "UPDATE ClientID SET name = '" + txtName.Text + "', phone_Num = '" + txtPhoneNumber.Text + "', Address = '" + txtAddress.Text + "', Password = '" + txtPassword.Text + "' WHERE ClientID = " + int.Parse(txtID.Text) + "";
-                SqlDataAdapter adapt = new SqlDataAdapter(query, con);
-                adapt.UpdateCommand.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                
+
                 string query1 = "SELECT * FROM ClientID WHERE ClientID = '" + txtID.Text + "'";
                 adapt = new SqlDataAdapter(query1, con);
                 adapt.SelectCommand.ExecuteNonQuery();
