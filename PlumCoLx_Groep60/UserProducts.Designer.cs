@@ -104,9 +104,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(28, 507);
+            this.listBox1.Location = new System.Drawing.Point(103, 475);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(596, 84);
+            this.listBox1.Size = new System.Drawing.Size(523, 148);
             this.listBox1.TabIndex = 6;
             // 
             // label3
@@ -121,7 +121,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(28, 607);
+            this.button3.Location = new System.Drawing.Point(30, 628);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(596, 36);
             this.button3.TabIndex = 8;
