@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -159,9 +160,7 @@ namespace PlumCoLx_Groep60
             {
                 MessageBox.Show(ex.Message);
             } 
-            // if the user clicks on checkout then a message box shoud display a summary of products aswell as totals and ask the user if they want to checkout
-            // whan the user checks out the oerder shoul be added to the Product_log table with a unique integer order number and the date and time of the order along with the client id, subtotal and the status as pending with a description of the products the customer ordere by means of a list of product ids and quantities
-
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -182,7 +181,55 @@ namespace PlumCoLx_Groep60
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // if the user clicks on checkout then a message box shoud display a summary of products aswell as totals and ask the user if they want to checkout
+            // whan the user checks out the oerder shoul be added to the Product_log table with a unique integer order number and the date and time of the order along with the client id, subtotal and the status as pending with a description of the products the customer ordere by means of a list of product ids and quantities
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to checkout?", "Checkout", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    //get user id from login.txt
+                    string[] lines = File.ReadAllLines("login.txt");
+                    string userid = lines[1];
+                    con.Open();
+                    //get next order number
+                    string sql = "SELECT MAX(OrderID) FROM Product_log";
+                    cmd = new SqlCommand(sql, con);
+                    adapt = new SqlDataAdapter(cmd);
+                    adapt.SelectCommand.ExecuteNonQuery();
+                    DataSet ds = new DataSet();
+                    adapt.Fill(ds);
+                    int orderID = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString()) + 1;
+                    string orderDes = "";
+                    for (int i = 0; i < tel; i++) { 
+                    orderDes += ProductID[i] + " " + ProductQuantity[i] + ", ";
+                    }
+                     sql = "INSERT INTO Product_log (OrderID, ClientID, OrderDate, Total, Status, Description) VALUES ("+orderID+",'" +  userid + "', '" + DateTime.Now + "', '" + subtotal + "', 'Pending', '"+orderDes+"' )";
+                    cmd = new SqlCommand(sql, con);
+                    adapt = new SqlDataAdapter(cmd);
+                    adapt.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Order Placed");
+                    textBox1.Text = "";
+                    ProductID = new string[20];
+                    ProductQuantity = new int[20];
 
+                    ProductDes = new string[20];
+                    ProductPrice = new double[20];
+                    tel = 0;
+
+                    subtotal = 0;
+                    listBox1.Items.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
     }
 }
