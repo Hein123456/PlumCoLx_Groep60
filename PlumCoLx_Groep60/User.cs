@@ -14,6 +14,7 @@ namespace PlumCoLx_Groep60
     {
         UserInfo Info = new UserInfo();
         UserProducts Products = new UserProducts();
+        UserServiceRequest SR = new UserServiceRequest();
         public User()
         {
             InitializeComponent();
@@ -49,7 +50,9 @@ namespace PlumCoLx_Groep60
 
         private void navToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            SR.MdiParent = this;
+            SR.Show();
+            Info.Hide();
         }
     }
 }
