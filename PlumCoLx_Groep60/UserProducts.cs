@@ -139,7 +139,7 @@ namespace PlumCoLx_Groep60
                     listBox1.Items.Clear();
                     listBox1.Items.Add("Your Cart:");
                     listBox1.Items.Add("Item: \t Quantity: \t Price:");
-                    for (int i = 0; i < ProductID.Length; i++)
+                    for (int i = 0; i <= ProductID.Length; i++)
                     {
                         double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
                         listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub);
