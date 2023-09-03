@@ -83,9 +83,11 @@ namespace PlumCoLx_Groep60
             string query = "SELECT * FROM ClientID WHERE ClientID = '" + id + "'";
             adapt = new SqlDataAdapter(query, con);
             adapt.SelectCommand.ExecuteNonQuery();
-            DataSet ds = new DataSet();
+            DataSet ds = new DataSet("user");
+            
             adapt.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.DataSource = ds;
+            dataGridView1.DataMember = "user";
             con.Close();
 
         }
