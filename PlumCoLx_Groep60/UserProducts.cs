@@ -37,20 +37,26 @@ namespace PlumCoLx_Groep60
             //only show products that are in stiock
             // only show the user the product description and price
             // sort products by category (plumbing_category)
+
             listBox1.Items.Clear();
             listBox1.Items.Add("Your Cart:");
-            listBox1.Items.Add("Item: \t Quantity: \t Price:" );
-            con.Open();
-            string sql = "SELECT Description, Price FROM Product WHERE quantity > 0";
-            cmd = new SqlCommand(sql, con);
-            adapt = new SqlDataAdapter(cmd);
-            adapt.SelectCommand.ExecuteNonQuery();
-            DataSet ds = new DataSet();
-            adapt.Fill(ds,"product");
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "product";
-            
-            con.Close();
+            listBox1.Items.Add("Item: \t Quantity: \t Price:");
+
+          
+
+             con.Open();
+             string sql = "SELECT Description, Price FROM Product WHERE quantity > 0";
+             cmd = new SqlCommand(sql, con);
+             adapt = new SqlDataAdapter(cmd);
+             adapt.SelectCommand.ExecuteNonQuery();
+             DataSet ds = new DataSet();
+             adapt.Fill(ds, "product");
+             dataGridView1.DataSource = ds;
+             dataGridView1.DataMember = "product";
+
+             con.Close();
+         
+
 
 
 
@@ -80,39 +86,55 @@ namespace PlumCoLx_Groep60
 
         private void button1_Click(object sender, EventArgs e)
         {
-           //get selected product id based on the description
-
-            con.Open();
-            string sql = "SELECT * FROM Product WHERE Description = '" + textBox1.Text + "'";
-            cmd = new SqlCommand(sql, con);
-            adapt = new SqlDataAdapter(cmd);
-            adapt.SelectCommand.ExecuteNonQuery();
-            DataSet ds = new DataSet();
-            adapt.Fill(ds);
-            string id = ds.Tables[0].Rows[0]["productId"].ToString();
-            string price = ds.Tables[0].Rows[0]["Price"].ToString();
-            string description = ds.Tables[0].Rows[0]["Description"].ToString();
-            con.Close();
-            if (ProductID.Contains(id))
+            //get selected product id based on the description
+            string id ="";
+            string price="";
+            string description = "";
+            try
             {
-                ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
-                subtotal += Convert.ToDouble(price);
+                con.Open();
+                string sql = "SELECT * FROM Product WHERE Description = '" + textBox1.Text + "'";
+                cmd = new SqlCommand(sql, con);
+                adapt = new SqlDataAdapter(cmd);
+                adapt.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+                adapt.Fill(ds);
+                 id = ds.Tables[0].Rows[0]["productId"].ToString();
+                 price = ds.Tables[0].Rows[0]["Price"].ToString();
+                 description = ds.Tables[0].Rows[0]["Description"].ToString();
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
-                // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
-                ProductID.Append(id);
-                ProductQuantity.Append(1);
-                subtotal += Convert.ToDouble(price);
+                MessageBox.Show(ex.Message);
             }
-
-            listBox1.Items.Clear();
-            listBox1.Items.Add("Your Cart:");
-            listBox1.Items.Add("Item: \t Quantity: \t Price:");
-            for (int i =0; i < ProductID.Length; i++)
+            try
             {
-                double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
-                listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub );
+                if (ProductID.Contains(id))
+                {
+                    ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
+                    subtotal += Convert.ToDouble(price);
+                }
+                else
+                {
+                    // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
+                    ProductID.Append(id);
+                    ProductQuantity.Append(1);
+                    subtotal += Convert.ToDouble(price);
+                }
+
+                listBox1.Items.Clear();
+                listBox1.Items.Add("Your Cart:");
+                listBox1.Items.Add("Item: \t Quantity: \t Price:");
+                for (int i = 0; i < ProductID.Length; i++)
+                {
+                    double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
+                    listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             // if the user clicks on checkout then a message box shoud display a summary of products aswell as totals and ask the user if they want to checkout
             // whan the user checks out the oerder shoul be added to the Product_log table with a unique integer order number and the date and time of the order along with the client id, subtotal and the status as pending with a description of the products the customer ordere by means of a list of product ids and quantities
