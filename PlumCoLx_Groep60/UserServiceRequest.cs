@@ -69,8 +69,10 @@ namespace PlumCoLx_Groep60
                 {
                     MessageBox.Show(orderID + "," + Convert.ToInt32(userid) + ", '" + DateTime.Now + "', " + subtotal + ", 'Pending', '" + orderDes);
                     con.Open();
+
                     string sql2 = "INSERT INTO ServiceOrder (OrderID, ClientID, OrderDate, Total, Status, Description) " +
                                   "VALUES (@OrderID, @ClientID, @OrderDate, @Total, @Status, @Description)";
+
                     cmd = new SqlCommand(sql2, con);
 
                     // Assuming orderID is an integer, userid is an integer, and subtotal is a decimal
@@ -81,8 +83,13 @@ namespace PlumCoLx_Groep60
                     cmd.Parameters.AddWithValue("@Status", "Pending");
                     cmd.Parameters.AddWithValue("@Description", orderDes);
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    // Create a SqlDataAdapter and associate it with the insert command
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = cmd;
+
+                    // Execute the insert command using the SqlDataAdapter
                     adapter.InsertCommand.ExecuteNonQuery();
+
                     con.Close();
                     MessageBox.Show("Order Placed");
                     textBox1.Text = "";
