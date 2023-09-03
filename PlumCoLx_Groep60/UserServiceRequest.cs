@@ -21,5 +21,10 @@ namespace PlumCoLx_Groep60
         {
 
         }
+
+        private void UserServiceRequest_Load(object sender, EventArgs e)
+        {
+            // display all services that are offered by the company in the datagridview
+        }
     }
 }
