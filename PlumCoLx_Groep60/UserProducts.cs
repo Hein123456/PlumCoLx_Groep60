@@ -17,7 +17,7 @@ namespace PlumCoLx_Groep60
         SqlCommand cmd;
         SqlDataAdapter adapt;
         string[] ProductID;
-        int[] ProductQuantity;
+        int[] ProductQuantity = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         double subtotal;
        
         public UserProducts()
