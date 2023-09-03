@@ -137,10 +137,10 @@ namespace PlumCoLx_Groep60
                         Array.Resize(ref ProductID, ProductID.Length + 1);
                         Array.Resize(ref ProductDes, ProductDes.Length + 1);
                         Array.Resize(ref ProductPrice, ProductPrice.Length + 1);
-                        ProductDes.Append(description);
-                        ProductID.Append(id);
-                        ProductQuantity.Append(1);
-                        ProductPrice.Append(price);
+                        ProductDes[ProductDes.Length+1] =(description);
+                        ProductID[ProductID.Length+1]=(id);
+                        ProductQuantity[ProductQuantity.Length+1]=(1);
+                        ProductPrice[ProductPrice.Length + 1] = (price);
                         subtotal += Convert.ToDouble(price);
                     }
                 }
