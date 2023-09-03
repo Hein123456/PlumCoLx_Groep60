@@ -34,7 +34,7 @@ namespace PlumCoLx_Groep60
             // only show the user the product description and price
             // sort products by category (plumbing_category)
              con.Open();
-            string sql = "SELECT Description, Price FROM Product WHERE Stock > 0";
+            string sql = "SELECT Description, Price FROM Product WHERE quantity > 0";
             cmd = new SqlCommand(sql, con);
             adapt = new SqlDataAdapter(cmd);
             adapt.SelectCommand.ExecuteNonQuery();
