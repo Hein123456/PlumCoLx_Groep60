@@ -56,9 +56,10 @@ namespace PlumCoLx_Groep60
                 con.Close();
                 con.Open();
                 // add user to database
-                string sql2 = "INSERT INTO ClientID (ClientID, name, Password, Address, phone_Num) VALUES ("+id+"'" + Username + "', '" + Password + "', '" + Address + "', '" + Phone + "')";
+                string sql2 = "INSERT INTO ClientID (ClientID, name, phone_Num,  Address,Password ) VALUES (" + id+"'" + Username + "', '" + Phone  + "', '" + Address + "', '" + Password + "')";
                 cmd = new SqlCommand(sql2, con);
                 adapt = new SqlDataAdapter(cmd);
+     
                 adapt.InsertCommand.ExecuteNonQuery();
                 // create text file with username
                 con.Close();
