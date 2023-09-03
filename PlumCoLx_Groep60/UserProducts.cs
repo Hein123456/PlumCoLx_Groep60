@@ -16,9 +16,9 @@ namespace PlumCoLx_Groep60
         SqlConnection con = new SqlConnection();
         SqlCommand cmd;
         SqlDataAdapter adapt;
-        string[] ProductID = new string[20];
-        int[] ProductQuantity = new int[20];
-        double subtotal;
+        string[] ProductID = new string[1];
+        int[] ProductQuantity = new int[1];
+        double subtotal = 0;
        
         public UserProducts()
         {
@@ -110,7 +110,7 @@ namespace PlumCoLx_Groep60
             }
             try
             {
-                if (ProductID == null)
+                if (ProductID[0] == null)
                 {
                     ProductID[0] = id;
                     ProductQuantity[0] = 1;
@@ -121,12 +121,16 @@ namespace PlumCoLx_Groep60
 
                     if (ProductID.Contains(id))
                     {
+                       
                         ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
                         subtotal += Convert.ToDouble(price);
                     }
                     else
                     {
                         // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
+                        //grow the array if the user adds a product that is already in the cart
+                        Array.Resize(ref ProductQuantity, ProductQuantity.Length + 1);
+                        Array.Resize(ref ProductID, ProductID.Length + 1);
                         ProductID.Append(id);
                         ProductQuantity.Append(1);
                         subtotal += Convert.ToDouble(price);
