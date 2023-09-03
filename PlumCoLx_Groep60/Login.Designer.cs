@@ -120,6 +120,7 @@ namespace PlumCoLx_Groep60
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.Shown += new System.EventHandler(this.Login_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

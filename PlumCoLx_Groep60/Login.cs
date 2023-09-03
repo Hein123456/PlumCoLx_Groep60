@@ -121,35 +121,41 @@ namespace PlumCoLx_Groep60
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //check if file exists
            
-            if (File.Exists("login.txt"))
-                {
-                    
-                    //read file
-                    string lines = File.ReadAllText("login.txt");
                 
-                    //check if user is admin
-                    if (lines.Contains("admin"))
-                    {
+        }
 
-                        //show admin form
-                        Admin admin = new Admin();
-                    this.Hide();
-                    admin.Show();
-                        this.Hide();
-                    }
-                    else
-                     if (lines.Contains("user"))
-                    {
-                        //show user form
-                        User user = new User();
-                    this.Hide();
-                    user.Show();
-                    this.Hide();
+        private void Login_Shown(object sender, EventArgs e)
+        {
+        //check if file exists
 
-                }
-                }
+        if (File.Exists("login.txt"))
+        {
+
+            //read file
+            string lines = File.ReadAllText("login.txt");
+
+            //check if user is admin
+            if (lines.Contains("admin"))
+            {
+
+                //show admin form
+                Admin admin = new Admin();
+                this.Hide();
+                admin.Show();
+                this.Hide();
+            }
+            else
+             if (lines.Contains("user"))
+            {
+                //show user form
+                User user = new User();
+                this.Hide();
+                user.Show();
+                this.Hide();
+
+            }
+        }
         }
     }
 }
