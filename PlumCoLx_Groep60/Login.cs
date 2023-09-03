@@ -21,12 +21,5 @@ namespace PlumCoLx_Groep60
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            User form = new User();
-            form.Show();
-            this.Hide();
-        }
     }
 }
