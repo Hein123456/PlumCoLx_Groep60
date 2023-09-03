@@ -66,6 +66,8 @@ namespace PlumCoLx_Groep60
                         //create text file
                         using (StreamWriter sw = File.CreateText("login.txt"))
                         {
+                    // write username form text box to file
+                    sw.WriteLine(Username);
                             sw.WriteLine("user");
                             sw.WriteLine(DateTime.Now);
                         }
@@ -96,8 +98,9 @@ namespace PlumCoLx_Groep60
                             //create text file
                             using (StreamWriter sw = File.CreateText("login.txt"))
                             {
-                        
-                        sw.WriteLine("admin");
+                        // write username form text box to file
+                                   sw.WriteLine(Username);
+                                sw.WriteLine("admin");
                                 sw.WriteLine(DateTime.Now);
                             }
                             //show admin form
