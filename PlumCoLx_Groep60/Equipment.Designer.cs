@@ -29,39 +29,30 @@ namespace PlumCoLx_Groep60
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvSupplers = new System.Windows.Forms.DataGridView();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
+            this.dgvEquipment = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAddSup = new System.Windows.Forms.Button();
             this.btnEditSup = new System.Windows.Forms.Button();
             this.btnRemoveSup = new System.Windows.Forms.Button();
-            this.btnAddOrder = new System.Windows.Forms.Button();
-            this.btnEditOrder = new System.Windows.Forms.Button();
-            this.btnRemoveOrder = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            this.txtEquipmentID = new System.Windows.Forms.TextBox();
+            this.txtEquipmentPrice = new System.Windows.Forms.TextBox();
+            this.txtEquipmentStatus = new System.Windows.Forms.TextBox();
+            this.txtEquipmentName = new System.Windows.Forms.TextBox();
+            this.txtEquipmentDesc = new System.Windows.Forms.TextBox();
+            this.txtEquipmentType = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipment)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvSupplers
+            // dgvEquipment
             // 
-            this.dgvSupplers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupplers.Location = new System.Drawing.Point(12, 67);
-            this.dgvSupplers.Name = "dgvSupplers";
-            this.dgvSupplers.RowHeadersWidth = 51;
-            this.dgvSupplers.RowTemplate.Height = 24;
-            this.dgvSupplers.Size = new System.Drawing.Size(775, 568);
-            this.dgvSupplers.TabIndex = 0;
-            // 
-            // dgvOrders
-            // 
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(810, 67);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.RowHeadersWidth = 51;
-            this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(775, 568);
-            this.dgvOrders.TabIndex = 1;
+            this.dgvEquipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipment.Location = new System.Drawing.Point(12, 67);
+            this.dgvEquipment.Name = "dgvEquipment";
+            this.dgvEquipment.RowHeadersWidth = 51;
+            this.dgvEquipment.RowTemplate.Height = 24;
+            this.dgvEquipment.Size = new System.Drawing.Size(1330, 278);
+            this.dgvEquipment.TabIndex = 0;
+            this.dgvEquipment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipment_CellContentClick);
             // 
             // label1
             // 
@@ -73,95 +64,118 @@ namespace PlumCoLx_Groep60
             this.label1.TabIndex = 2;
             this.label1.Text = "Suppliers:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(804, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Orders:";
-            // 
             // btnAddSup
             // 
             this.btnAddSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSup.Location = new System.Drawing.Point(12, 660);
+            this.btnAddSup.Location = new System.Drawing.Point(12, 351);
             this.btnAddSup.Name = "btnAddSup";
             this.btnAddSup.Size = new System.Drawing.Size(218, 85);
             this.btnAddSup.TabIndex = 4;
             this.btnAddSup.Text = "Add supplier";
             this.btnAddSup.UseVisualStyleBackColor = true;
+            this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
             // 
             // btnEditSup
             // 
             this.btnEditSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditSup.Location = new System.Drawing.Point(236, 657);
+            this.btnEditSup.Location = new System.Drawing.Point(12, 469);
             this.btnEditSup.Name = "btnEditSup";
             this.btnEditSup.Size = new System.Drawing.Size(218, 88);
             this.btnEditSup.TabIndex = 5;
             this.btnEditSup.Text = "Edit Supplier";
             this.btnEditSup.UseVisualStyleBackColor = true;
+            this.btnEditSup.Click += new System.EventHandler(this.btnEditSup_Click);
             // 
             // btnRemoveSup
             // 
             this.btnRemoveSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveSup.Location = new System.Drawing.Point(460, 658);
+            this.btnRemoveSup.Location = new System.Drawing.Point(236, 351);
             this.btnRemoveSup.Name = "btnRemoveSup";
             this.btnRemoveSup.Size = new System.Drawing.Size(218, 85);
             this.btnRemoveSup.TabIndex = 6;
             this.btnRemoveSup.Text = "Remove supplier";
             this.btnRemoveSup.UseVisualStyleBackColor = true;
+            this.btnRemoveSup.Click += new System.EventHandler(this.btnRemoveSup_Click);
             // 
-            // btnAddOrder
+            // txtEquipmentID
             // 
-            this.btnAddOrder.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrder.Location = new System.Drawing.Point(810, 662);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(218, 83);
-            this.btnAddOrder.TabIndex = 7;
-            this.btnAddOrder.Text = "Add Order";
-            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.txtEquipmentID.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentID.Location = new System.Drawing.Point(236, 469);
+            this.txtEquipmentID.Name = "txtEquipmentID";
+            this.txtEquipmentID.Size = new System.Drawing.Size(218, 26);
+            this.txtEquipmentID.TabIndex = 7;
+            this.txtEquipmentID.Text = "ID";
+            this.txtEquipmentID.TextChanged += new System.EventHandler(this.txtEquipmentID_TextChanged);
             // 
-            // btnEditOrder
+            // txtEquipmentPrice
             // 
-            this.btnEditOrder.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditOrder.Location = new System.Drawing.Point(1034, 664);
-            this.btnEditOrder.Name = "btnEditOrder";
-            this.btnEditOrder.Size = new System.Drawing.Size(218, 81);
-            this.btnEditOrder.TabIndex = 8;
-            this.btnEditOrder.Text = "Edit Order";
-            this.btnEditOrder.UseVisualStyleBackColor = true;
+            this.txtEquipmentPrice.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentPrice.Location = new System.Drawing.Point(236, 497);
+            this.txtEquipmentPrice.Name = "txtEquipmentPrice";
+            this.txtEquipmentPrice.Size = new System.Drawing.Size(218, 26);
+            this.txtEquipmentPrice.TabIndex = 8;
+            this.txtEquipmentPrice.Text = "Price";
+            this.txtEquipmentPrice.TextChanged += new System.EventHandler(this.txtEquipmentPrice_TextChanged);
             // 
-            // btnRemoveOrder
+            // txtEquipmentStatus
             // 
-            this.btnRemoveOrder.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveOrder.Location = new System.Drawing.Point(1258, 666);
-            this.btnRemoveOrder.Name = "btnRemoveOrder";
-            this.btnRemoveOrder.Size = new System.Drawing.Size(218, 79);
-            this.btnRemoveOrder.TabIndex = 9;
-            this.btnRemoveOrder.Text = "Remove Order";
-            this.btnRemoveOrder.UseVisualStyleBackColor = true;
+            this.txtEquipmentStatus.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentStatus.Location = new System.Drawing.Point(236, 609);
+            this.txtEquipmentStatus.Name = "txtEquipmentStatus";
+            this.txtEquipmentStatus.Size = new System.Drawing.Size(218, 26);
+            this.txtEquipmentStatus.TabIndex = 9;
+            this.txtEquipmentStatus.Text = "Status";
+            this.txtEquipmentStatus.TextChanged += new System.EventHandler(this.txtEquipmentStatus_TextChanged);
+            // 
+            // txtEquipmentName
+            // 
+            this.txtEquipmentName.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentName.Location = new System.Drawing.Point(236, 581);
+            this.txtEquipmentName.Name = "txtEquipmentName";
+            this.txtEquipmentName.Size = new System.Drawing.Size(218, 26);
+            this.txtEquipmentName.TabIndex = 10;
+            this.txtEquipmentName.Text = "Name";
+            this.txtEquipmentName.TextChanged += new System.EventHandler(this.txtEquipmentName_TextChanged);
+            // 
+            // txtEquipmentDesc
+            // 
+            this.txtEquipmentDesc.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentDesc.Location = new System.Drawing.Point(236, 553);
+            this.txtEquipmentDesc.Name = "txtEquipmentDesc";
+            this.txtEquipmentDesc.Size = new System.Drawing.Size(218, 26);
+            this.txtEquipmentDesc.TabIndex = 11;
+            this.txtEquipmentDesc.Text = "Description";
+            this.txtEquipmentDesc.TextChanged += new System.EventHandler(this.txtEquipmentDesc_TextChanged);
+            // 
+            // txtEquipmentType
+            // 
+            this.txtEquipmentType.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentType.Location = new System.Drawing.Point(236, 525);
+            this.txtEquipmentType.Name = "txtEquipmentType";
+            this.txtEquipmentType.Size = new System.Drawing.Size(218, 26);
+            this.txtEquipmentType.TabIndex = 12;
+            this.txtEquipmentType.Text = "Type";
+            this.txtEquipmentType.TextChanged += new System.EventHandler(this.txtEquipmentType_TextChanged);
             // 
             // Equipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1597, 800);
-            this.Controls.Add(this.btnRemoveOrder);
-            this.Controls.Add(this.btnEditOrder);
-            this.Controls.Add(this.btnAddOrder);
+            this.Controls.Add(this.txtEquipmentType);
+            this.Controls.Add(this.txtEquipmentDesc);
+            this.Controls.Add(this.txtEquipmentName);
+            this.Controls.Add(this.txtEquipmentStatus);
+            this.Controls.Add(this.txtEquipmentPrice);
+            this.Controls.Add(this.txtEquipmentID);
             this.Controls.Add(this.btnRemoveSup);
             this.Controls.Add(this.btnEditSup);
             this.Controls.Add(this.btnAddSup);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvOrders);
-            this.Controls.Add(this.dgvSupplers);
+            this.Controls.Add(this.dgvEquipment);
             this.Name = "Equipment";
             this.Text = "Equipment";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,15 +183,16 @@ namespace PlumCoLx_Groep60
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvSupplers;
-        private System.Windows.Forms.DataGridView dgvOrders;
+        private System.Windows.Forms.DataGridView dgvEquipment;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddSup;
         private System.Windows.Forms.Button btnEditSup;
         private System.Windows.Forms.Button btnRemoveSup;
-        private System.Windows.Forms.Button btnAddOrder;
-        private System.Windows.Forms.Button btnEditOrder;
-        private System.Windows.Forms.Button btnRemoveOrder;
+        private System.Windows.Forms.TextBox txtEquipmentID;
+        private System.Windows.Forms.TextBox txtEquipmentPrice;
+        private System.Windows.Forms.TextBox txtEquipmentStatus;
+        private System.Windows.Forms.TextBox txtEquipmentName;
+        private System.Windows.Forms.TextBox txtEquipmentDesc;
+        private System.Windows.Forms.TextBox txtEquipmentType;
     }
 }
