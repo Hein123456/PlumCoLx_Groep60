@@ -14,7 +14,8 @@ namespace PlumCoLx_Groep60
 {
     public partial class Login : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2V7S1NJ;Initial Catalog=PlumCoLx;Integrated Security=True");
+        // create absolute path to database
+      
         SqlCommand cmd;
         SqlDataAdapter adapt;
 
