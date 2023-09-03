@@ -83,7 +83,7 @@ namespace PlumCoLx_Groep60
            //get selected product id based on the description
 
             con.Open();
-            string sql = "SELECT * FROM Products WHERE Description = '" + textBox1.Text + "'";
+            string sql = "SELECT * FROM Product WHERE Description = '" + textBox1.Text + "'";
             cmd = new SqlCommand(sql, con);
             adapt = new SqlDataAdapter(cmd);
             adapt.SelectCommand.ExecuteNonQuery();
