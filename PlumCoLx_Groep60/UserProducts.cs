@@ -19,6 +19,7 @@ namespace PlumCoLx_Groep60
         string[] ProductID = new string[1];
         string[] ProductDes = new string[1];
         int[] ProductQuantity = new int[1];
+        double[] ProductPrice = new double[1];
         double subtotal = 0;
        
         public UserProducts()
@@ -116,6 +117,7 @@ namespace PlumCoLx_Groep60
                     ProductID[0] = id;
                     ProductQuantity[0] = 1;
                     ProductDes[0] = description;
+                    ProductPrice[0] = price;
                     subtotal += Convert.ToDouble(price);
                 }
                 else
@@ -134,9 +136,11 @@ namespace PlumCoLx_Groep60
                         Array.Resize(ref ProductQuantity, ProductQuantity.Length + 1);
                         Array.Resize(ref ProductID, ProductID.Length + 1);
                         Array.Resize(ref ProductDes, ProductDes.Length + 1);
+                        Array.Resize(ref ProductPrice, ProductPrice.Length + 1);
                         ProductDes.Append(description);
                         ProductID.Append(id);
                         ProductQuantity.Append(1);
+                        ProductPrice.Append(price);
                         subtotal += Convert.ToDouble(price);
                     }
                 }
@@ -145,7 +149,7 @@ namespace PlumCoLx_Groep60
                     listBox1.Items.Add("Item: \t Quantity: \t Price:");
                     for (int i = 0; i < ProductID.Length; i++)
                     {
-                        double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
+                        double sub = (Convert.ToDouble(ProductPrice[i]) * Convert.ToDouble(ProductQuantity[i]));
                         listBox1.Items.Add(ProductDes[i] + "\t" + ProductQuantity[i] + "\t" + sub);
                     }
                     listBox1.Items.Add("Subtotal: " + subtotal);
