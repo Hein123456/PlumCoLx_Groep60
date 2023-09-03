@@ -65,7 +65,24 @@ namespace PlumCoLx_Groep60
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //update user info at client id that is received from txtID
+            // display user info in datagridview
+            con.Open();
+            string query = "UPDATE ClientID SET name = '" + txtName.Text + "', phone_Num = '" + txtPhoneNumber.Text + "', Address = '" + txtAddress.Text + "', Password = '" + txtPassword.Text + "' WHERE ClientID = '" + txtID.Text + "'";
+            SqlDataAdapter adapt = new SqlDataAdapter(query, con);
+            adapt.UpdateCommand.ExecuteNonQuery();
+            string query1 = "SELECT * FROM ClientID WHERE ClientID = '" + txtID.Text + "'";
+            DataSet ds = new DataSet();
 
+            adapt.Fill(ds, "User");
+            dataGridView1.DataSource = ds;
+            dataGridView1.DataMember = "user";
+            txtID.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            txtName.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            txtPhoneNumber.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            txtAddress.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            txtPassword.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
+            con.Close();
         }
 
         private void UserAccountInfo_Load(object sender, EventArgs e)

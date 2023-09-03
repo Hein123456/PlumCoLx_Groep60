@@ -46,11 +46,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(26, 585);
+            this.button3.Location = new System.Drawing.Point(469, 326);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(596, 36);
+            this.button3.Size = new System.Drawing.Size(253, 36);
             this.button3.TabIndex = 17;
-            this.button3.Text = "Update INfo";
+            this.button3.Text = "Update Info";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -92,7 +92,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(598, 114);
+            this.dataGridView1.Size = new System.Drawing.Size(758, 114);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -152,7 +152,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(477, 272);
+            this.txtID.Location = new System.Drawing.Point(595, 269);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
@@ -163,7 +163,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(393, 272);
+            this.label6.Location = new System.Drawing.Point(511, 269);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 29);
             this.label6.TabIndex = 24;
@@ -173,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 638);
+            this.ClientSize = new System.Drawing.Size(815, 638);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPhoneNumber);
