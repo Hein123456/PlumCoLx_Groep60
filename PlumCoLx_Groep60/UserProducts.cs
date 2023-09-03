@@ -87,8 +87,8 @@ namespace PlumCoLx_Groep60
         private void button1_Click(object sender, EventArgs e)
         {
             //get selected product id based on the description
-            string id ="";
-            string price="";
+            string id = "";
+            string price = "";
             string description = "";
             try
             {
@@ -99,9 +99,9 @@ namespace PlumCoLx_Groep60
                 adapt.SelectCommand.ExecuteNonQuery();
                 DataSet ds = new DataSet();
                 adapt.Fill(ds);
-                 id = ds.Tables[0].Rows[0]["productId"].ToString();
-                 price = ds.Tables[0].Rows[0]["Price"].ToString();
-                 description = ds.Tables[0].Rows[0]["Description"].ToString();
+                id = ds.Tables[0].Rows[0]["productId"].ToString();
+                price = ds.Tables[0].Rows[0]["Price"].ToString();
+                description = ds.Tables[0].Rows[0]["Description"].ToString();
                 con.Close();
             }
             catch (Exception ex)
@@ -110,32 +110,42 @@ namespace PlumCoLx_Groep60
             }
             try
             {
-                if (ProductID.Contains(id))
+                if (ProductID == null)
                 {
-                    ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
+                    ProductID[0] = id;
+                    ProductQuantity[0] = 1;
                     subtotal += Convert.ToDouble(price);
                 }
                 else
                 {
-                    // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
-                    ProductID.Append(id);
-                    ProductQuantity.Append(1);
-                    subtotal += Convert.ToDouble(price);
-                }
 
-                listBox1.Items.Clear();
-                listBox1.Items.Add("Your Cart:");
-                listBox1.Items.Add("Item: \t Quantity: \t Price:");
-                for (int i = 0; i < ProductID.Length; i++)
-                {
-                    double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
-                    listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub);
+                    if (ProductID.Contains(id))
+                    {
+                        ProductQuantity[Array.IndexOf(ProductID, id)] += 1;
+                        subtotal += Convert.ToDouble(price);
+                    }
+                    else
+                    {
+                        // if the user clicks add to cart add the product description to the list box and if a user adds the same product twice increase the quantity by 1
+                        ProductID.Append(id);
+                        ProductQuantity.Append(1);
+                        subtotal += Convert.ToDouble(price);
+                    }
+
+                    listBox1.Items.Clear();
+                    listBox1.Items.Add("Your Cart:");
+                    listBox1.Items.Add("Item: \t Quantity: \t Price:");
+                    for (int i = 0; i < ProductID.Length; i++)
+                    {
+                        double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
+                        listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub);
+                    }
                 }
-            }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            } 
             // if the user clicks on checkout then a message box shoud display a summary of products aswell as totals and ask the user if they want to checkout
             // whan the user checks out the oerder shoul be added to the Product_log table with a unique integer order number and the date and time of the order along with the client id, subtotal and the status as pending with a description of the products the customer ordere by means of a list of product ids and quantities
 
