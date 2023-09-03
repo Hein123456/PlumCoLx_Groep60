@@ -39,11 +39,13 @@ namespace PlumCoLx_Groep60
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             int count = ds.Tables[0].Rows.Count;
+            con.Close();
             // if user doesn't exist add user to database
             if (count == 0)
             {
+                con.Open();
                 //generate new integer id based on ids in table
-                string sql1 = "SELECT MAX(id) FROM ClientID";
+                string sql1 = "SELECT MAX(ClientID) FROM ClientID";
                 cmd = new SqlCommand(sql1, con);
                 adapt = new SqlDataAdapter(cmd);
                 adapt.SelectCommand.ExecuteNonQuery();
@@ -51,13 +53,15 @@ namespace PlumCoLx_Groep60
                 adapt.Fill(ds1);
                 int id = Convert.ToInt32(ds1.Tables[0].Rows[0][0]) + 1;
 
-                
+                con.Close();
+                con.Open();
                 // add user to database
                 string sql2 = "INSERT INTO ClientID (ClientID, name, Password, Address, phone_Num) VALUES ("+id+"'" + Username + "', '" + Password + "', '" + Address + "', '" + Phone + "')";
                 cmd = new SqlCommand(sql2, con);
                 adapt = new SqlDataAdapter(cmd);
                 adapt.InsertCommand.ExecuteNonQuery();
                 // create text file with username
+                con.Close();
                 string path = "login.txt";
                 using (StreamWriter sw = File.CreateText(path))
                 {
