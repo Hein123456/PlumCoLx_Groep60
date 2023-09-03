@@ -40,6 +40,14 @@ namespace PlumCoLx_Groep60
            
             Info.MdiParent = this;
             Info.Show();
+
+
+            // get username from text file
+              string path = "login.txt";
+            string[] lines = System.IO.File.ReadAllLines(path);
+            usernameToolStripMenuItem.Text = lines[0];
+            // display username from text file in label
+
         }
 
         private void User_FormClosing(object sender, FormClosingEventArgs e)
