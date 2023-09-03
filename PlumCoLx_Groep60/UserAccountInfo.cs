@@ -163,6 +163,8 @@ namespace PlumCoLx_Groep60
                 File.Delete("login.txt");
                     //go back to login screen
                     this.Hide();
+                    User user = new User();
+                    user.Hide();
                     Login login = new Login();
                     login.Show();
                 }
