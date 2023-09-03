@@ -17,6 +17,7 @@ namespace PlumCoLx_Groep60
         SqlCommand cmd;
         SqlDataAdapter adapt;
         string[] ProductID = new string[1];
+        
         int[] ProductQuantity = new int[1];
         double subtotal = 0;
        
@@ -37,7 +38,7 @@ namespace PlumCoLx_Groep60
             //only show products that are in stiock
             // only show the user the product description and price
             // sort products by category (plumbing_category)
-
+            ProductID[0] = null;
             listBox1.Items.Clear();
             listBox1.Items.Add("Your Cart:");
             listBox1.Items.Add("Item: \t Quantity: \t Price:");
@@ -139,7 +140,7 @@ namespace PlumCoLx_Groep60
                     listBox1.Items.Clear();
                     listBox1.Items.Add("Your Cart:");
                     listBox1.Items.Add("Item: \t Quantity: \t Price:");
-                    for (int i = 0; i <= ProductID.Length; i++)
+                    for (int i = 0; i < ProductID.Length; i++)
                     {
                         double sub = (Convert.ToDouble(price) * Convert.ToDouble(ProductQuantity[i]));
                         listBox1.Items.Add(description + "\t" + ProductQuantity[i] + "\t" + sub);
