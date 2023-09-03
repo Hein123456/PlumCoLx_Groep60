@@ -200,14 +200,26 @@ namespace PlumCoLx_Groep60
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     int orderID = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString()) + 1;
+
                     string orderDes = "";
                     for (int i = 0; i < tel; i++) { 
                     orderDes += ProductID[i] + " " + ProductQuantity[i] + ", ";
                     }
-                     sql = "INSERT INTO Product_log (OrderID, ClientID, OrderDate, Total, Status, Description) VALUES ("+orderID+",'" +  userid + "', '" + DateTime.Now + "', '" + subtotal + "', 'Pending', '"+orderDes+"' )";
-                    cmd = new SqlCommand(sql, con);
-                    adapt = new SqlDataAdapter(cmd);
-                    adapt.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    con.Open();
+                    string sql2 = "INSERT INTO Product_log (OrderID, ClientID, OrderDate, Total, Status, Description) " +
+                                  "VALUES (@OrderID, @ClientID, @OrderDate, @Total, @Status, @Description)";
+                    cmd = new SqlCommand(sql2, con);
+
+                    // Assuming orderID is an integer, userid is an integer, and subtotal is a decimal
+                    cmd.Parameters.AddWithValue("@OrderID", orderID);
+                    cmd.Parameters.AddWithValue("@ClientID", Convert.ToInt32(userid));
+                    cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Total", subtotal);
+                    cmd.Parameters.AddWithValue("@Status", "Pending");
+                    cmd.Parameters.AddWithValue("@Description", orderDes);
+
+                    cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Order Placed");
                     textBox1.Text = "";
@@ -223,7 +235,7 @@ namespace PlumCoLx_Groep60
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message + ex.StackTrace);
                 }
             }
             else if (dialogResult == DialogResult.No)
