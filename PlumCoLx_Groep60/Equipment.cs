@@ -23,7 +23,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
         }
 
         private void btnAddSup_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"INSERT INTO Equipment VALUES('{txtEquipmentID.Text}','{txtEquipmentPrice.Text}','{txtEquipmentDesc.Text}','{txtEquipmentName.Text}','{txtEquipmentStatus.Text}')";
+                string sql = $"INSERT INTO Equipment VALUES('{Convert.ToInt32(txtEquipmentID.Text)}','{Convert.ToDouble(txtEquipmentPrice.Text)}','{txtEquipmentDesc.Text}','{txtEquipmentName.Text}','{txtEquipmentStatus.Text}')";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -51,7 +51,7 @@ namespace PlumCoLx_Groep60
                 dgvEquipment.DataMember = "user";
                 con.Close();
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -93,12 +93,12 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
+                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '" + dgvEquipment.SelectedRows + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@ID", txtEquipmentID.Text);
-                cmd.Parameters.AddWithValue("@Price", txtEquipmentPrice.Text);
+                cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtEquipmentID.Text));
+                cmd.Parameters.AddWithValue("@Price", Convert.ToDouble(txtEquipmentPrice.Text));
                 cmd.Parameters.AddWithValue("@Desc", txtEquipmentDesc.Text);
                 cmd.Parameters.AddWithValue("@Name", txtEquipmentName.Text);
                 cmd.Parameters.AddWithValue("@Status", txtEquipmentStatus.Text);
@@ -127,7 +127,6 @@ namespace PlumCoLx_Groep60
 
         private void dgvEquipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
             if (value != null)
             {
@@ -152,11 +151,7 @@ namespace PlumCoLx_Groep60
             if (value != null)
             {
                 txtEquipmentStatus.Text = value.ToString();
-}
-         // get selected item from datagridview and add its elements to the text boxes
-        
-
-            
+            }
         }
 
         private void Equipment_Load(object sender, EventArgs e)

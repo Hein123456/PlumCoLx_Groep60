@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
         }
 
         private void btnPending_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace PlumCoLx_Groep60
             try
             {
                 con.Open();
-                String query = "select *, (select sum(Total) from ServiceOrder WHERE Status = 'Waiting For Payment') as TotalCost from ServiceOrder WHERE Status <> 'Delivered'";
+                String query = "select *, (select sum(Total) from ServiceOrder WHERE Status = 'Waiting For Payment') as TotalCost from ServiceOrder WHERE Status = 'Waiting For Payment'";
 
                 cmd = new SqlCommand(query, con);
                 adap = new SqlDataAdapter(cmd);
@@ -59,20 +59,6 @@ namespace PlumCoLx_Groep60
                 con.Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-        private void Finances_Load(object sender, EventArgs e)
-        {
-            con.Open();
-            string query = "SELECT * FROM ClientID";
-            adap = new SqlDataAdapter(query, con);
-            adap.SelectCommand.ExecuteNonQuery();
-            DataSet ds = new DataSet();
-
-            adap.Fill(ds, "User");
-            dgvFinances.DataSource = ds;
-            dgvFinances.DataMember = "user";
-            con.Close();
         }
     }
 }
