@@ -60,7 +60,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = "DELETE FROM Employee WHERE JobId = '" + dgvPlumbers.SelectedRows + "'";
+                string sql = "DELETE FROM Employee WHERE JobId = '" + +Convert.ToInt32(txtEmployeeID.Text) + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -91,7 +91,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Employee SET employeeId = @ID, Name = @Name, Surname = @Surname, phoneNum = @Number, Email_address = @Email, Driverse_lisense = @Drivers, Medical_History = @Medical, Emergency_Contact = @Emergency, Position = @Position WHERE '" + dgvPlumbers.SelectedRows + "'";
+                string sql = $"UPDATE Employee SET employeeId = @ID, Name = @Name, Surname = @Surname, phoneNum = @Number, Email_address = @Email, Driverse_lisense = @Drivers, Medical_History = @Medical, Emergency_Contact = @Emergency, Position = @Position WHERE '" + +Convert.ToInt32(txtEmployeeID.Text) + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

@@ -61,7 +61,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = "DELETE FROM Product WHERE productId = '" + dgvProducts.SelectedRows + "'";
+                string sql = "DELETE FROM Product WHERE productId = '" + +Convert.ToInt32(txtProductID.Text) + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -92,7 +92,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Product SET productId = @ID, SupplierID = @Supplier, Description = @Desc, name = @Name, plumbing_category = @Category, Price = @Price, quantity = @Quantity, dateTime = @DateTime WHERE '" + dgvProducts.SelectedRows + "'";
+                string sql = $"UPDATE Product SET productId = @ID, SupplierID = @Supplier, Description = @Desc, name = @Name, plumbing_category = @Category, Price = @Price, quantity = @Quantity, dateTime = @DateTime WHERE '" + +Convert.ToInt32(txtProductID.Text) + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

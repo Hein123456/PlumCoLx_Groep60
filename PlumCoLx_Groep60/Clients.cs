@@ -60,7 +60,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = "DELETE FROM ClientID WHERE ClientID = '" + dgvClients.SelectedRows + "'";
+                string sql = "DELETE FROM ClientID WHERE ClientID = '" + +Convert.ToInt32(txtClientID.Text) + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -91,7 +91,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE ClientID SET ClientID = @ID, Name = @Name, phone_Num = @Number, Address = @Address, Password = @Password WHERE '" + dgvClients.SelectedRows + "'";
+                string sql = $"UPDATE ClientID SET ClientID = @ID, Name = @Name, phone_Num = @Number, Address = @Address, Password = @Password WHERE '" + +Convert.ToInt32(txtClientID.Text) + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
