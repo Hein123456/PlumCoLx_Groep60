@@ -122,51 +122,25 @@ namespace PlumCoLx_Groep60
 
         private void dgvJobs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            object value = dgvJobs.Rows[e.RowIndex].Cells[0].Value;
+            if (value != null)
             {
-                object value = dgvJobs.Rows[e.RowIndex].Cells[0].Value;
-
-                if (value != null)
-                {
-                    txtJobID.Text = value.ToString();
-                }
-                else
-                {
-                    txtJobID.Text = string.Empty;
-                }
-
-                object value2 = dgvJobs.Rows[e.RowIndex].Cells[1].Value;
-
-                if (value != null)
-                {
-                    txtClientID.Text = value.ToString();
-                }
-                else
-                {
-                    txtClientID.Text = string.Empty;
-                }
-
-                object value3 = dgvJobs.Rows[e.RowIndex].Cells[2].Value;
-
-                if (value != null)
-                {
-                    txtJobDesc.Text = value.ToString();
-                }
-                else
-                {
-                    txtJobDesc.Text = string.Empty;
-                }
-
-                object value4 = dgvJobs.Rows[e.RowIndex].Cells[3].Value;
-
-                if (value != null)
-                {
-                    txtJobStatus.Text = value.ToString();
-                }
-                else
-                {
-                    txtJobStatus.Text = string.Empty;
-                }
+                txtJobID.Text = value.ToString();
+            }
+            value = dgvJobs.Rows[e.RowIndex].Cells[1].Value;
+            if (value != null)
+            {
+                txtClientID.Text = value.ToString();
+            }
+            value = dgvJobs.Rows[e.RowIndex].Cells[2].Value;
+            if (value != null)
+            {
+                txtJobDesc.Text = value.ToString();
+            }
+            value = dgvJobs.Rows[e.RowIndex].Cells[3].Value;
+            if (value != null)
+            {
+                txtJobStatus.Text = value.ToString();
             }
         }
 

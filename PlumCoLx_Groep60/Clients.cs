@@ -123,64 +123,32 @@ namespace PlumCoLx_Groep60
 
         private void dgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            object value = dgvClients.Rows[e.RowIndex].Cells[0].Value;
+            if (value != null)
             {
-                object value = dgvClients.Rows[e.RowIndex].Cells[0].Value;
-
-                if (value != null)
-                {
-                    txtClientID.Text = value.ToString();
-                }
-                else
-                {
-                    txtClientID.Text = string.Empty;
-                }
-
-                object value2 = dgvClients.Rows[e.RowIndex].Cells[1].Value;
-
-                if (value != null)
-                {
-                    txtClientName.Text = value.ToString();
-                }
-                else
-                {
-                    txtClientName.Text = string.Empty;
-                }
-
-                object value3 = dgvClients.Rows[e.RowIndex].Cells[2].Value;
-
-                if (value != null)
-                {
-                    txtPhoneNum.Text = value.ToString();
-                }
-                else
-                {
-                    txtPhoneNum.Text = string.Empty;
-                }
-
-                object value4 = dgvClients.Rows[e.RowIndex].Cells[3].Value;
-
-                if (value != null)
-                {
-                    txtAddress.Text = value.ToString();
-                }
-                else
-                {
-                    txtAddress.Text = string.Empty;
-                }
-
-                object value5 = dgvClients.Rows[e.RowIndex].Cells[4].Value;
-
-                if (value != null)
-                {
-                    txtPhoneNum.Text = value.ToString();
-                }
-                else
-                {
-                    txtPhoneNum.Text = string.Empty;
-                }
+                txtClientID.Text = value.ToString();
             }
+            value = dgvClients.Rows[e.RowIndex].Cells[1].Value;
+            if (value != null)
+            {
+                txtClientName.Text = value.ToString();
             }
+            value = dgvClients.Rows[e.RowIndex].Cells[2].Value;
+            if (value != null)
+            {
+                txtPhoneNum.Text = value.ToString();
+            }
+            value = dgvClients.Rows[e.RowIndex].Cells[3].Value;
+            if (value != null)
+            {
+                txtAddress.Text = value.ToString();
+            }
+            value = dgvClients.Rows[e.RowIndex].Cells[4].Value;
+            if (value != null)
+            {
+                txtPassword.Text = value.ToString();
+            }
+        }
 
         private void Clients_Load(object sender, EventArgs e)
         {

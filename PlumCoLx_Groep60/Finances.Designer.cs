@@ -33,8 +33,6 @@ namespace PlumCoLx_Groep60
             this.dgvFinances = new System.Windows.Forms.DataGridView();
             this.btnBefore = new System.Windows.Forms.Button();
             this.btnThisMonth = new System.Windows.Forms.Button();
-            this.btnAfter = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFinances)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +42,7 @@ namespace PlumCoLx_Groep60
             this.label1.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 39);
+            this.label1.Size = new System.Drawing.Size(131, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Finances:";
             // 
@@ -78,29 +76,11 @@ namespace PlumCoLx_Groep60
             this.btnThisMonth.Text = "ThisMonth";
             this.btnThisMonth.UseVisualStyleBackColor = true;
             // 
-            // btnAfter
-            // 
-            this.btnAfter.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAfter.Location = new System.Drawing.Point(384, 632);
-            this.btnAfter.Name = "btnAfter";
-            this.btnAfter.Size = new System.Drawing.Size(166, 81);
-            this.btnAfter.TabIndex = 5;
-            this.btnAfter.Text = "After";
-            this.btnAfter.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(562, 573);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 6;
-            // 
             // Finances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1606, 798);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.btnAfter);
             this.Controls.Add(this.btnThisMonth);
             this.Controls.Add(this.btnBefore);
             this.Controls.Add(this.dgvFinances);
@@ -119,7 +99,5 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.DataGridView dgvFinances;
         private System.Windows.Forms.Button btnBefore;
         private System.Windows.Forms.Button btnThisMonth;
-        private System.Windows.Forms.Button btnAfter;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

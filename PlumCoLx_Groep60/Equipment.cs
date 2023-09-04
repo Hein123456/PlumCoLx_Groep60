@@ -31,7 +31,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"INSERT INTO Equipment VALUES('{txtEquipmentID.Text}','{txtEquipmentPrice.Text}','{txtEquipmentType.Text}','{txtEquipmentDesc.Text}','{txtEquipmentName.Text}','{txtEquipmentStatus.Text}')";
+                string sql = $"INSERT INTO Equipment VALUES('{txtEquipmentID.Text}','{txtEquipmentPrice.Text}','{txtEquipmentDesc.Text}','{txtEquipmentName.Text}','{txtEquipmentStatus.Text}')";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -93,13 +93,12 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqType = @Type, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
+                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@ID", txtEquipmentID.Text);
                 cmd.Parameters.AddWithValue("@Price", txtEquipmentPrice.Text);
-                cmd.Parameters.AddWithValue("@Type", txtEquipmentType.Text);
                 cmd.Parameters.AddWithValue("@Desc", txtEquipmentDesc.Text);
                 cmd.Parameters.AddWithValue("@Name", txtEquipmentName.Text);
                 cmd.Parameters.AddWithValue("@Status", txtEquipmentStatus.Text);
@@ -128,73 +127,30 @@ namespace PlumCoLx_Groep60
 
         private void dgvEquipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
+            if (value != null)
             {
-                object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentID.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentID.Text = string.Empty; 
-                }
-
-                object value2 = dgvEquipment.Rows[e.RowIndex].Cells[1].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentPrice.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentPrice.Text = string.Empty;
-                }
-
-                object value3 = dgvEquipment.Rows[e.RowIndex].Cells[2].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentType.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentType.Text = string.Empty;
-                }
-
-                object value4 = dgvEquipment.Rows[e.RowIndex].Cells[3].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentDesc.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentDesc.Text = string.Empty;
-                }
-
-                object value5 = dgvEquipment.Rows[e.RowIndex].Cells[4].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentName.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentName.Text = string.Empty;
-                }
-
-                object value6 = dgvEquipment.Rows[e.RowIndex].Cells[5].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentStatus.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentStatus.Text = string.Empty;
-                }
+                txtEquipmentID.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[1].Value;
+            if (value != null)
+            {
+                txtEquipmentPrice.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[2].Value;
+            if (value != null)
+            {
+                txtEquipmentDesc.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[3].Value;
+            if (value != null)
+            {
+                txtEquipmentName.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[4].Value;
+            if (value != null)
+            {
+                txtEquipmentStatus.Text = value.ToString();
             }
         }
 
