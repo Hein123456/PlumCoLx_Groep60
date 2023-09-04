@@ -127,95 +127,45 @@ namespace PlumCoLx_Groep60
 
         private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            object value = dgvProducts.Rows[e.RowIndex].Cells[0].Value;
+            if (value != null)
             {
-                object value = dgvProducts.Rows[e.RowIndex].Cells[0].Value;
-
-                if (value != null)
-                {
-                    txtProductID.Text = value.ToString();
-                }
-                else
-                {
-                    txtProductID.Text = string.Empty;
-                }
-
-                object value2 = dgvProducts.Rows[e.RowIndex].Cells[1].Value;
-
-                if (value != null)
-                {
-                    txtSupplierID.Text = value.ToString();
-                }
-                else
-                {
-                    txtSupplierID.Text = string.Empty;
-                }
-
-                object value3 = dgvProducts.Rows[e.RowIndex].Cells[2].Value;
-
-                if (value != null)
-                {
-                    txtProductDesc.Text = value.ToString();
-                }
-                else
-                {
-                    txtProductDesc.Text = string.Empty;
-                }
-
-                object value4 = dgvProducts.Rows[e.RowIndex].Cells[3].Value;
-
-                if (value != null)
-                {
-                    txtProductName.Text = value.ToString();
-                }
-                else
-                {
-                    txtProductName.Text = string.Empty;
-                }
-
-                object value5 = dgvProducts.Rows[e.RowIndex].Cells[4].Value;
-
-                if (value != null)
-                {
-                    txtProductCategory.Text = value.ToString();
-                }
-                else
-                {
-                    txtProductCategory.Text = string.Empty;
-                }
-
-                object value6 = dgvProducts.Rows[e.RowIndex].Cells[5].Value;
-
-                if (value != null)
-                {
-                    txtProductPrice.Text = value.ToString();
-                }
-                else
-                {
-                    txtProductPrice.Text = string.Empty;
-                }
-
-                object value7 = dgvProducts.Rows[e.RowIndex].Cells[6].Value;
-
-                if (value != null)
-                {
-                    txtQuantity.Text = value.ToString();
-                }
-                else
-                {
-                    txtQuantity.Text = string.Empty;
-                }
-
-                object value8 = dgvProducts.Rows[e.RowIndex].Cells[7].Value;
-
-                if (value != null)
-                {
-                    txtDateTime.Text = value.ToString();
-                }
-                else
-                {
-                    txtDateTime.Text = string.Empty;
-                }
+                txtProductID.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[1].Value;
+            if (value != null)
+            {
+                txtSupplierID.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[2].Value;
+            if (value != null)
+            {
+                txtProductDesc.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[3].Value;
+            if (value != null)
+            {
+                txtProductName.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[4].Value;
+            if (value != null)
+            {
+                txtProductCategory.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[5].Value;
+            if (value != null)
+            {
+                txtProductPrice.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[6].Value;
+            if (value != null)
+            {
+                txtQuantity.Text = value.ToString();
+            }
+            value = dgvProducts.Rows[e.RowIndex].Cells[7].Value;
+            if (value != null)
+            {
+                txtDateTime.Text = value.ToString();
             }
         }
 

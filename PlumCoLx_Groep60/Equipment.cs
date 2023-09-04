@@ -31,7 +31,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"INSERT INTO Equipment VALUES('{txtEquipmentID.Text}','{txtEquipmentPrice.Text}','{txtEquipmentType.Text}','{txtEquipmentDesc.Text}','{txtEquipmentName.Text}','{txtEquipmentStatus.Text}')";
+                string sql = $"INSERT INTO Equipment VALUES('{txtEquipmentID.Text}','{txtEquipmentPrice.Text}','{txtEquipmentDesc.Text}','{txtEquipmentName.Text}','{txtEquipmentStatus.Text}')";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -93,13 +93,12 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqType = @Type, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
+                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@ID", txtEquipmentID.Text);
                 cmd.Parameters.AddWithValue("@Price", txtEquipmentPrice.Text);
-                cmd.Parameters.AddWithValue("@Type", txtEquipmentType.Text);
                 cmd.Parameters.AddWithValue("@Desc", txtEquipmentDesc.Text);
                 cmd.Parameters.AddWithValue("@Name", txtEquipmentName.Text);
                 cmd.Parameters.AddWithValue("@Status", txtEquipmentStatus.Text);
@@ -128,8 +127,8 @@ namespace PlumCoLx_Groep60
 
         private void dgvEquipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-         // get selected item from datagridview and add its elements to the text boxes
-         object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
+
+            object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
             if (value != null)
             {
                 txtEquipmentID.Text = value.ToString();
@@ -142,23 +141,20 @@ namespace PlumCoLx_Groep60
             value = dgvEquipment.Rows[e.RowIndex].Cells[2].Value;
             if (value != null)
             {
-                txtEquipmentType.Text = value.ToString();
+                txtEquipmentDesc.Text = value.ToString();
             }
             value = dgvEquipment.Rows[e.RowIndex].Cells[3].Value;
             if (value != null)
             {
-                txtEquipmentDesc.Text = value.ToString();
+                txtEquipmentName.Text = value.ToString();
             }
             value = dgvEquipment.Rows[e.RowIndex].Cells[4].Value;
             if (value != null)
             {
-                txtEquipmentName.Text = value.ToString();
-            }
-            value = dgvEquipment.Rows[e.RowIndex].Cells[5].Value;
-            if (value != null)
-            {
                 txtEquipmentStatus.Text = value.ToString();
-            }
+}
+         // get selected item from datagridview and add its elements to the text boxes
+        
 
             
         }

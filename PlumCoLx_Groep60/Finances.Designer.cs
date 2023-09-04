@@ -31,10 +31,8 @@ namespace PlumCoLx_Groep60
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvFinances = new System.Windows.Forms.DataGridView();
-            this.btnBefore = new System.Windows.Forms.Button();
-            this.btnThisMonth = new System.Windows.Forms.Button();
-            this.btnAfter = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnPending = new System.Windows.Forms.Button();
+            this.btnAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFinances)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +42,7 @@ namespace PlumCoLx_Groep60
             this.label1.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 39);
+            this.label1.Size = new System.Drawing.Size(131, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Finances:";
             // 
@@ -58,55 +56,40 @@ namespace PlumCoLx_Groep60
             this.dgvFinances.Size = new System.Drawing.Size(1565, 503);
             this.dgvFinances.TabIndex = 1;
             // 
-            // btnBefore
+            // btnPending
             // 
-            this.btnBefore.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBefore.Location = new System.Drawing.Point(40, 632);
-            this.btnBefore.Name = "btnBefore";
-            this.btnBefore.Size = new System.Drawing.Size(166, 81);
-            this.btnBefore.TabIndex = 3;
-            this.btnBefore.Text = "Before";
-            this.btnBefore.UseVisualStyleBackColor = true;
+            this.btnPending.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPending.Location = new System.Drawing.Point(40, 632);
+            this.btnPending.Name = "btnPending";
+            this.btnPending.Size = new System.Drawing.Size(166, 81);
+            this.btnPending.TabIndex = 3;
+            this.btnPending.Text = "Pending";
+            this.btnPending.UseVisualStyleBackColor = true;
+            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
             // 
-            // btnThisMonth
+            // btnAll
             // 
-            this.btnThisMonth.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThisMonth.Location = new System.Drawing.Point(212, 632);
-            this.btnThisMonth.Name = "btnThisMonth";
-            this.btnThisMonth.Size = new System.Drawing.Size(166, 81);
-            this.btnThisMonth.TabIndex = 4;
-            this.btnThisMonth.Text = "ThisMonth";
-            this.btnThisMonth.UseVisualStyleBackColor = true;
-            // 
-            // btnAfter
-            // 
-            this.btnAfter.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAfter.Location = new System.Drawing.Point(384, 632);
-            this.btnAfter.Name = "btnAfter";
-            this.btnAfter.Size = new System.Drawing.Size(166, 81);
-            this.btnAfter.TabIndex = 5;
-            this.btnAfter.Text = "After";
-            this.btnAfter.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(562, 573);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 6;
+            this.btnAll.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Location = new System.Drawing.Point(212, 632);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(166, 81);
+            this.btnAll.TabIndex = 4;
+            this.btnAll.Text = "Display all";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // Finances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1606, 798);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.btnAfter);
-            this.Controls.Add(this.btnThisMonth);
-            this.Controls.Add(this.btnBefore);
+            this.Controls.Add(this.btnAll);
+            this.Controls.Add(this.btnPending);
             this.Controls.Add(this.dgvFinances);
             this.Controls.Add(this.label1);
             this.Name = "Finances";
             this.Text = "Finances";
+            this.Load += new System.EventHandler(this.Finances_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFinances)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,9 +100,7 @@ namespace PlumCoLx_Groep60
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvFinances;
-        private System.Windows.Forms.Button btnBefore;
-        private System.Windows.Forms.Button btnThisMonth;
-        private System.Windows.Forms.Button btnAfter;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button btnPending;
+        private System.Windows.Forms.Button btnAll;
     }
 }
