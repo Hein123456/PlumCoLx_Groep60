@@ -101,5 +101,15 @@ namespace PlumCoLx_Groep60
         {
             Application.Exit();
         }
+
+        private void switchUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // delete file
+            System.IO.File.Delete("login.txt");
+            // show login
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

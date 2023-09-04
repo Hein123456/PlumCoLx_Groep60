@@ -20,9 +20,10 @@ namespace PlumCoLx_Groep60
         public Login()
         {
             InitializeComponent();
-            // create absolute path to database
+            // initialize connection to database with a relative path
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
 
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+           
 
         }
 
@@ -46,7 +47,7 @@ namespace PlumCoLx_Groep60
                 String Username = textBox1.Text;
                 String Password = textBox2.Text;
                 //check if user exists
-                bool userExists = false;
+                
                
                     con.Open();
                     //sql to check if user exists
@@ -59,12 +60,14 @@ namespace PlumCoLx_Groep60
                     adapt.Fill(ds);
                     int count = ds.Tables[0].Rows.Count;
             // get userID from database
-            int id = (int)ds.Tables[0].Rows[0]["ClientID"];
-                    con.Close();
-                    if (count == 1)
+            con.Close();
+
+            if (count == 1)
                     {
-                        //user exists
-                        userExists = true;
+
+                int id = (int)ds.Tables[0].Rows[0]["ClientID"];
+                //user exists
+              
                         //create text file
                         // owerwrite file if it exists
                         string path = "login.txt";
@@ -76,10 +79,12 @@ namespace PlumCoLx_Groep60
                             sw.WriteLine("user");
                             sw.WriteLine(DateTime.Now);
                         }
-                        //show user form
-                        User user = new User();
+                //show user form
+               
+                User user = new User();
                         user.Show();
                         this.Hide();
+
                     }
                     else
                     {
@@ -99,7 +104,7 @@ namespace PlumCoLx_Groep60
                         if (count2 == 1)
                         {
                             //admin exists
-                            userExists = true;
+                           
                             //create text file
                             using (StreamWriter sw = File.CreateText("login.txt"))
                             {
@@ -161,6 +166,13 @@ namespace PlumCoLx_Groep60
 
             }
         }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
         }
     }
 }

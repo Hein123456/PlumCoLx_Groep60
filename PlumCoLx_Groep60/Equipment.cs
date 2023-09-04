@@ -23,7 +23,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
         }
 
         private void btnAddSup_Click(object sender, EventArgs e)
@@ -127,6 +127,7 @@ namespace PlumCoLx_Groep60
 
         private void dgvEquipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
             if (value != null)
             {
@@ -151,7 +152,11 @@ namespace PlumCoLx_Groep60
             if (value != null)
             {
                 txtEquipmentStatus.Text = value.ToString();
-            }
+}
+         // get selected item from datagridview and add its elements to the text boxes
+        
+
+            
         }
 
         private void Equipment_Load(object sender, EventArgs e)

@@ -43,6 +43,7 @@
             this.button3.TabIndex = 26;
             this.button3.Text = "Show Pending Transactions";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -72,6 +73,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Show all transactions";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserFinancial
             // 
@@ -85,6 +87,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserFinancial";
             this.Text = "UserFinancial";
+            this.Load += new System.EventHandler(this.UserFinancial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

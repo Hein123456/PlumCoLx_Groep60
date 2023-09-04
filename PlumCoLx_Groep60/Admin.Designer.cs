@@ -39,6 +39,7 @@ namespace PlumCoLx_Groep60
             this.financesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.switchUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@ namespace PlumCoLx_Groep60
             this.plumbersToolStripMenuItem,
             this.clientsToolStripMenuItem,
             this.financesToolStripMenuItem,
+            this.switchUserToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -114,6 +116,13 @@ namespace PlumCoLx_Groep60
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // switchUserToolStripMenuItem
+            // 
+            this.switchUserToolStripMenuItem.Name = "switchUserToolStripMenuItem";
+            this.switchUserToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.switchUserToolStripMenuItem.Text = "Switch user";
+            this.switchUserToolStripMenuItem.Click += new System.EventHandler(this.switchUserToolStripMenuItem_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,5 +152,6 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem financesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem switchUserToolStripMenuItem;
     }
 }
