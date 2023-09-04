@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         public UserFinancial()
         {
             InitializeComponent();
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
             string[] lines = File.ReadAllLines("login.txt");
             userid = lines[1];
         }
