@@ -64,7 +64,7 @@ namespace PlumCoLx_Groep60
                     //userid
                     con.Open();
                     // add user to database
-                    string sql2 = "INSERT INTO ServiceOrder (OrderID, OrderDate, Total, Status, ClientID, Description) VALUES (@OrderID, @OrderDate, @Total, @Status, @ClientID, @Description)";
+                    String sql2 = "INSERT INTO ServiceOrder (OrderID, OrderDate, Total, Status, ClientID, Description) VALUES (@OrderID, @OrderDate, @Total, @Status, @ClientID, @Description)";
                     cmd = new SqlCommand(sql2, con);
                     cmd.Parameters.AddWithValue("@OrderID", id);
                     cmd.Parameters.AddWithValue("@OrderDate", date);
