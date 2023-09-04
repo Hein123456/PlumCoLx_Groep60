@@ -106,74 +106,39 @@ namespace PlumCoLx_Groep60
 
         private void dgvEquipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+         // get selected item from datagridview and add its elements to the text boxes
+         object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
+            if (value != null)
             {
-                object value = dgvEquipment.Rows[e.RowIndex].Cells[0].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentID.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentID.Text = string.Empty; 
-                }
-
-                object value2 = dgvEquipment.Rows[e.RowIndex].Cells[1].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentPrice.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentPrice.Text = string.Empty;
-                }
-
-                object value3 = dgvEquipment.Rows[e.RowIndex].Cells[2].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentType.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentType.Text = string.Empty;
-                }
-
-                object value4 = dgvEquipment.Rows[e.RowIndex].Cells[3].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentDesc.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentDesc.Text = string.Empty;
-                }
-
-                object value5 = dgvEquipment.Rows[e.RowIndex].Cells[4].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentName.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentName.Text = string.Empty;
-                }
-
-                object value6 = dgvEquipment.Rows[e.RowIndex].Cells[5].Value;
-
-                if (value != null)
-                {
-                    txtEquipmentStatus.Text = value.ToString();
-                }
-                else
-                {
-                    txtEquipmentStatus.Text = string.Empty;
-                }
+                txtEquipmentID.Text = value.ToString();
             }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[1].Value;
+            if (value != null)
+            {
+                txtEquipmentPrice.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[2].Value;
+            if (value != null)
+            {
+                txtEquipmentType.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[3].Value;
+            if (value != null)
+            {
+                txtEquipmentDesc.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[4].Value;
+            if (value != null)
+            {
+                txtEquipmentName.Text = value.ToString();
+            }
+            value = dgvEquipment.Rows[e.RowIndex].Cells[5].Value;
+            if (value != null)
+            {
+                txtEquipmentStatus.Text = value.ToString();
+            }
+
+            
         }
 
         private void Equipment_Load(object sender, EventArgs e)
