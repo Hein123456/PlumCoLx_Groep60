@@ -23,7 +23,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
         }
 
         private void btnAddSup_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = "DELETE FROM Equipment WHERE EquipmentId = '" + dgvEquipment.SelectedRows + "'";
+                string sql = "DELETE FROM Equipment WHERE EquipmentId = " + Convert.ToInt32(txtEquipmentID.Text);
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -93,7 +93,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '" + dgvEquipment.SelectedRows + "'";
+                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE EquipmentId = " + Convert.ToInt32(txtEquipmentID.Text);
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

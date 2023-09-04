@@ -40,28 +40,31 @@ namespace PlumCoLx_Groep60
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 19);
+            this.label1.Location = new System.Drawing.Point(20, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 31);
+            this.label1.Size = new System.Drawing.Size(107, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Finances:";
             // 
             // dgvFinances
             // 
             this.dgvFinances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFinances.Location = new System.Drawing.Point(29, 58);
+            this.dgvFinances.Location = new System.Drawing.Point(22, 47);
+            this.dgvFinances.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvFinances.Name = "dgvFinances";
             this.dgvFinances.RowHeadersWidth = 51;
             this.dgvFinances.RowTemplate.Height = 24;
-            this.dgvFinances.Size = new System.Drawing.Size(1565, 503);
+            this.dgvFinances.Size = new System.Drawing.Size(1174, 409);
             this.dgvFinances.TabIndex = 1;
             // 
             // btnPending
             // 
             this.btnPending.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPending.Location = new System.Drawing.Point(40, 632);
+            this.btnPending.Location = new System.Drawing.Point(30, 514);
+            this.btnPending.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPending.Name = "btnPending";
-            this.btnPending.Size = new System.Drawing.Size(166, 81);
+            this.btnPending.Size = new System.Drawing.Size(124, 66);
             this.btnPending.TabIndex = 3;
             this.btnPending.Text = "Pending";
             this.btnPending.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@ namespace PlumCoLx_Groep60
             // btnAll
             // 
             this.btnAll.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.Location = new System.Drawing.Point(212, 632);
+            this.btnAll.Location = new System.Drawing.Point(159, 514);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(166, 81);
+            this.btnAll.Size = new System.Drawing.Size(124, 66);
             this.btnAll.TabIndex = 4;
             this.btnAll.Text = "Display all";
             this.btnAll.UseVisualStyleBackColor = true;
@@ -80,13 +84,14 @@ namespace PlumCoLx_Groep60
             // 
             // Finances
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1606, 798);
+            this.ClientSize = new System.Drawing.Size(1149, 599);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.btnPending);
             this.Controls.Add(this.dgvFinances);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Finances";
             this.Text = "Finances";
             this.Load += new System.EventHandler(this.Finances_Load);

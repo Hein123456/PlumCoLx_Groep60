@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
         }
 
         private void btnPending_Click(object sender, EventArgs e)
@@ -59,6 +59,11 @@ namespace PlumCoLx_Groep60
                 con.Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void Finances_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
