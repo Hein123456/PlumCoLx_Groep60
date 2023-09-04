@@ -70,8 +70,8 @@ namespace PlumCoLx_Groep60
             DataSet ds = new DataSet();
 
             adap.Fill(ds, "User");
-            dgvClients.DataSource = ds;
-            dgvClients.DataMember = "user";
+            dgvFinances.DataSource = ds;
+            dgvFinances.DataMember = "user";
             con.Close();
         }
     }
