@@ -22,7 +22,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
         }
 
         private void btnAddSup_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"INSERT INTO Product VALUES('{txtProductID.Text}','{txtSupplierID.Text}','{txtProductDesc.Text}','{txtProductName.Text}','{txtProductCategory.Text}','{txtProductPrice.Text}','{txtQuantity.Text}','{txtDateTime.Text}')";
+                string sql = $"INSERT INTO Product VALUES('{Convert.ToInt32(txtProductID.Text)}','{Convert.ToInt32(txtSupplierID.Text)}','{txtProductDesc.Text}','{txtProductName.Text}','{txtProductCategory.Text}','{Convert.ToDouble(txtProductPrice.Text)}','{Convert.ToInt32(txtQuantity.Text)}','{Convert.ToDateTime(txtDateTime.Text)}')";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -96,14 +96,14 @@ namespace PlumCoLx_Groep60
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@ID", txtProductID.Text);
-                cmd.Parameters.AddWithValue("@Supplier", txtSupplierID.Text);
+                cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtProductID.Text));
+                cmd.Parameters.AddWithValue("@Supplier", Convert.ToInt32(txtSupplierID.Text));
                 cmd.Parameters.AddWithValue("@Desc", txtProductDesc.Text);
                 cmd.Parameters.AddWithValue("@Name", txtProductName.Text);
                 cmd.Parameters.AddWithValue("@Category", txtProductCategory.Text);
-                cmd.Parameters.AddWithValue("@Price", txtProductPrice.Text);
-                cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
-                cmd.Parameters.AddWithValue("@DateTime", txtDateTime.Text);
+                cmd.Parameters.AddWithValue("@Price", Convert.ToDouble(txtProductPrice.Text));
+                cmd.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txtQuantity.Text));
+                cmd.Parameters.AddWithValue("@DateTime", Convert.ToDateTime(txtDateTime.Text));
                 cmd.ExecuteNonQuery();
 
                 con.Close();

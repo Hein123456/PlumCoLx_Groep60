@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
         }
 
         private void btnAddSup_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"INSERT INTO Jobs VALUES('{txtJobID.Text}','{txtClientID.Text}','{txtJobDesc.Text}','{txtJobStatus.Text}')";
+                string sql = $"INSERT INTO Jobs VALUES('{Convert.ToInt32(txtJobID.Text)}','{Convert.ToInt32(txtClientID.Text)}','{txtJobDesc.Text}','{txtJobStatus.Text}')";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -95,8 +95,8 @@ namespace PlumCoLx_Groep60
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@ID", txtJobID.Text);
-                cmd.Parameters.AddWithValue("@Supplier", txtClientID.Text);
+                cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtJobID.Text));
+                cmd.Parameters.AddWithValue("@Supplier", Convert.ToInt32(txtClientID.Text));
                 cmd.Parameters.AddWithValue("@Desc", txtJobDesc.Text);
                 cmd.Parameters.AddWithValue("@Name", txtJobStatus.Text);
                 cmd.ExecuteNonQuery();
