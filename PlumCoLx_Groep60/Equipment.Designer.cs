@@ -105,7 +105,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentID.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentID.TabIndex = 7;
             this.txtEquipmentID.Text = "ID";
-            this.txtEquipmentID.TextChanged += new System.EventHandler(this.txtEquipmentID_TextChanged);
             // 
             // txtEquipmentPrice
             // 
@@ -115,7 +114,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentPrice.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentPrice.TabIndex = 8;
             this.txtEquipmentPrice.Text = "Price";
-            this.txtEquipmentPrice.TextChanged += new System.EventHandler(this.txtEquipmentPrice_TextChanged);
             // 
             // txtEquipmentStatus
             // 
@@ -125,7 +123,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentStatus.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentStatus.TabIndex = 9;
             this.txtEquipmentStatus.Text = "Status";
-            this.txtEquipmentStatus.TextChanged += new System.EventHandler(this.txtEquipmentStatus_TextChanged);
             // 
             // txtEquipmentName
             // 
@@ -135,7 +132,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentName.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentName.TabIndex = 10;
             this.txtEquipmentName.Text = "Name";
-            this.txtEquipmentName.TextChanged += new System.EventHandler(this.txtEquipmentName_TextChanged);
             // 
             // txtEquipmentDesc
             // 
@@ -145,7 +141,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentDesc.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentDesc.TabIndex = 11;
             this.txtEquipmentDesc.Text = "Description";
-            this.txtEquipmentDesc.TextChanged += new System.EventHandler(this.txtEquipmentDesc_TextChanged);
             // 
             // txtEquipmentType
             // 
@@ -155,7 +150,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentType.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentType.TabIndex = 12;
             this.txtEquipmentType.Text = "Type";
-            this.txtEquipmentType.TextChanged += new System.EventHandler(this.txtEquipmentType_TextChanged);
             // 
             // Equipment
             // 
@@ -175,6 +169,7 @@ namespace PlumCoLx_Groep60
             this.Controls.Add(this.dgvEquipment);
             this.Name = "Equipment";
             this.Text = "Equipment";
+            this.Load += new System.EventHandler(this.Equipment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

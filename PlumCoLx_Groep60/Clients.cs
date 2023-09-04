@@ -159,5 +159,19 @@ namespace PlumCoLx_Groep60
                 }
             }
             }
+
+        private void Clients_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "SELECT * FROM ClientID";
+            adap = new SqlDataAdapter(query, con);
+            adap.SelectCommand.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+
+            adap.Fill(ds, "User");
+            dgvClients.DataSource = ds;
+            dgvClients.DataMember = "user";
+            con.Close();
+        }
     }
 }

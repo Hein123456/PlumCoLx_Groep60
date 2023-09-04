@@ -235,6 +235,7 @@ namespace PlumCoLx_Groep60
             this.Controls.Add(this.label1);
             this.Name = "Plumbers";
             this.Text = "Plumbers";
+            this.Load += new System.EventHandler(this.Plumbers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlumbers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

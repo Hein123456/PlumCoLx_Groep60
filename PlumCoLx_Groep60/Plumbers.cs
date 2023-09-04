@@ -243,5 +243,19 @@ namespace PlumCoLx_Groep60
                 }
             }
         }
+
+        private void Plumbers_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "SELECT * FROM Employee";
+            adap = new SqlDataAdapter(query, con);
+            adap.SelectCommand.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+
+            adap.Fill(ds, "User");
+            dgvPlumbers.DataSource = ds;
+            dgvPlumbers.DataMember = "user";
+            con.Close();
+        }
     }
 }

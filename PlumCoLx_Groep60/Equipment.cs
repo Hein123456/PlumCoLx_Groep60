@@ -104,36 +104,6 @@ namespace PlumCoLx_Groep60
 
         }
 
-        private void txtEquipmentDesc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEquipmentName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEquipmentStatus_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEquipmentPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEquipmentID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEquipmentType_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvEquipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
@@ -204,6 +174,20 @@ namespace PlumCoLx_Groep60
                     txtEquipmentStatus.Text = string.Empty;
                 }
             }
+        }
+
+        private void Equipment_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "SELECT * FROM Equipment";
+            adap = new SqlDataAdapter(query, con);
+            adap.SelectCommand.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+
+            adap.Fill(ds, "User");
+            dgvEquipment.DataSource = ds;
+            dgvEquipment.DataMember = "user";
+            con.Close();
         }
     }
 }

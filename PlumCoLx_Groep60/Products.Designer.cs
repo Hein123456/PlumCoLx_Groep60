@@ -191,6 +191,7 @@ namespace PlumCoLx_Groep60
             this.Controls.Add(this.label1);
             this.Name = "Products";
             this.Text = "Products";
+            this.Load += new System.EventHandler(this.Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

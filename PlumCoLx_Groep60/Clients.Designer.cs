@@ -158,6 +158,7 @@ namespace PlumCoLx_Groep60
             this.Controls.Add(this.label1);
             this.Name = "Clients";
             this.Text = "Clients";
+            this.Load += new System.EventHandler(this.Clients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

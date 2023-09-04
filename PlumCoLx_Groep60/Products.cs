@@ -196,5 +196,19 @@ namespace PlumCoLx_Groep60
                 }
             }
         }
+
+        private void Products_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "SELECT * FROM Product";
+            adap = new SqlDataAdapter(query, con);
+            adap.SelectCommand.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+
+            adap.Fill(ds, "User");
+            dgvProducts.DataSource = ds;
+            dgvProducts.DataMember = "user";
+            con.Close();
+        }
     }
 }

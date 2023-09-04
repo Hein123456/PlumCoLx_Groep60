@@ -147,6 +147,20 @@ namespace PlumCoLx_Groep60
                 }
             }
         }
+
+        private void Jobs_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "SELECT * FROM Jobs";
+            adap = new SqlDataAdapter(query, con);
+            adap.SelectCommand.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+
+            adap.Fill(ds, "User");
+            dgvJobs.DataSource = ds;
+            dgvJobs.DataMember = "user";
+            con.Close();
+        }
     }
 }
 
