@@ -40,10 +40,7 @@ namespace PlumCoLx_Groep60
             this.btnAddSup = new System.Windows.Forms.Button();
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtEmergencyContact = new System.Windows.Forms.TextBox();
-            this.txtMaritalStatus = new System.Windows.Forms.TextBox();
             this.txtMedicalHis = new System.Windows.Forms.TextBox();
-            this.txtCriminalRec = new System.Windows.Forms.TextBox();
-            this.txtAllergies = new System.Windows.Forms.TextBox();
             this.txtDriverLicense = new System.Windows.Forms.TextBox();
             this.txtEmpEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -143,7 +140,7 @@ namespace PlumCoLx_Groep60
             // txtPosition
             // 
             this.txtPosition.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(460, 563);
+            this.txtPosition.Location = new System.Drawing.Point(460, 481);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(218, 26);
             this.txtPosition.TabIndex = 40;
@@ -152,47 +149,20 @@ namespace PlumCoLx_Groep60
             // txtEmergencyContact
             // 
             this.txtEmergencyContact.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmergencyContact.Location = new System.Drawing.Point(460, 531);
+            this.txtEmergencyContact.Location = new System.Drawing.Point(460, 449);
             this.txtEmergencyContact.Name = "txtEmergencyContact";
             this.txtEmergencyContact.Size = new System.Drawing.Size(218, 26);
             this.txtEmergencyContact.TabIndex = 41;
             this.txtEmergencyContact.Text = "Emergency Contact";
             // 
-            // txtMaritalStatus
-            // 
-            this.txtMaritalStatus.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaritalStatus.Location = new System.Drawing.Point(460, 499);
-            this.txtMaritalStatus.Name = "txtMaritalStatus";
-            this.txtMaritalStatus.Size = new System.Drawing.Size(218, 26);
-            this.txtMaritalStatus.TabIndex = 42;
-            this.txtMaritalStatus.Text = "Marital Status";
-            // 
             // txtMedicalHis
             // 
             this.txtMedicalHis.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicalHis.Location = new System.Drawing.Point(460, 471);
+            this.txtMedicalHis.Location = new System.Drawing.Point(460, 415);
             this.txtMedicalHis.Name = "txtMedicalHis";
             this.txtMedicalHis.Size = new System.Drawing.Size(218, 26);
             this.txtMedicalHis.TabIndex = 43;
             this.txtMedicalHis.Text = "Medical History";
-            // 
-            // txtCriminalRec
-            // 
-            this.txtCriminalRec.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCriminalRec.Location = new System.Drawing.Point(460, 443);
-            this.txtCriminalRec.Name = "txtCriminalRec";
-            this.txtCriminalRec.Size = new System.Drawing.Size(218, 26);
-            this.txtCriminalRec.TabIndex = 44;
-            this.txtCriminalRec.Text = "Criminal Record";
-            // 
-            // txtAllergies
-            // 
-            this.txtAllergies.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAllergies.Location = new System.Drawing.Point(460, 415);
-            this.txtAllergies.Name = "txtAllergies";
-            this.txtAllergies.Size = new System.Drawing.Size(218, 26);
-            this.txtAllergies.TabIndex = 45;
-            this.txtAllergies.Text = "Allergies";
             // 
             // txtDriverLicense
             // 
@@ -230,10 +200,7 @@ namespace PlumCoLx_Groep60
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmpEmail);
             this.Controls.Add(this.txtDriverLicense);
-            this.Controls.Add(this.txtAllergies);
-            this.Controls.Add(this.txtCriminalRec);
             this.Controls.Add(this.txtMedicalHis);
-            this.Controls.Add(this.txtMaritalStatus);
             this.Controls.Add(this.txtEmergencyContact);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtEmpSurname);
@@ -266,10 +233,7 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.Button btnAddSup;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtEmergencyContact;
-        private System.Windows.Forms.TextBox txtMaritalStatus;
         private System.Windows.Forms.TextBox txtMedicalHis;
-        private System.Windows.Forms.TextBox txtCriminalRec;
-        private System.Windows.Forms.TextBox txtAllergies;
         private System.Windows.Forms.TextBox txtDriverLicense;
         private System.Windows.Forms.TextBox txtEmpEmail;
         private System.Windows.Forms.Label label2;

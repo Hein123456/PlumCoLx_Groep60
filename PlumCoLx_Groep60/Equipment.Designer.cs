@@ -39,7 +39,6 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentStatus = new System.Windows.Forms.TextBox();
             this.txtEquipmentName = new System.Windows.Forms.TextBox();
             this.txtEquipmentDesc = new System.Windows.Forms.TextBox();
-            this.txtEquipmentType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipment)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +60,7 @@ namespace PlumCoLx_Groep60
             this.label1.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 39);
+            this.label1.Size = new System.Drawing.Size(151, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Equipment:";
             // 
@@ -119,7 +118,7 @@ namespace PlumCoLx_Groep60
             // txtEquipmentStatus
             // 
             this.txtEquipmentStatus.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquipmentStatus.Location = new System.Drawing.Point(236, 609);
+            this.txtEquipmentStatus.Location = new System.Drawing.Point(236, 585);
             this.txtEquipmentStatus.Name = "txtEquipmentStatus";
             this.txtEquipmentStatus.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentStatus.TabIndex = 9;
@@ -128,7 +127,7 @@ namespace PlumCoLx_Groep60
             // txtEquipmentName
             // 
             this.txtEquipmentName.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquipmentName.Location = new System.Drawing.Point(236, 581);
+            this.txtEquipmentName.Location = new System.Drawing.Point(236, 557);
             this.txtEquipmentName.Name = "txtEquipmentName";
             this.txtEquipmentName.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentName.TabIndex = 10;
@@ -137,20 +136,11 @@ namespace PlumCoLx_Groep60
             // txtEquipmentDesc
             // 
             this.txtEquipmentDesc.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquipmentDesc.Location = new System.Drawing.Point(236, 553);
+            this.txtEquipmentDesc.Location = new System.Drawing.Point(236, 529);
             this.txtEquipmentDesc.Name = "txtEquipmentDesc";
             this.txtEquipmentDesc.Size = new System.Drawing.Size(218, 26);
             this.txtEquipmentDesc.TabIndex = 11;
             this.txtEquipmentDesc.Text = "Description";
-            // 
-            // txtEquipmentType
-            // 
-            this.txtEquipmentType.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquipmentType.Location = new System.Drawing.Point(236, 525);
-            this.txtEquipmentType.Name = "txtEquipmentType";
-            this.txtEquipmentType.Size = new System.Drawing.Size(218, 26);
-            this.txtEquipmentType.TabIndex = 12;
-            this.txtEquipmentType.Text = "Type";
             // 
             // label2
             // 
@@ -158,7 +148,7 @@ namespace PlumCoLx_Groep60
             this.label2.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(482, 469);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(569, 28);
+            this.label2.Size = new System.Drawing.Size(455, 22);
             this.label2.TabIndex = 13;
             this.label2.Text = "To add a record insert information into the textboxes.";
             // 
@@ -168,7 +158,6 @@ namespace PlumCoLx_Groep60
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1597, 800);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtEquipmentType);
             this.Controls.Add(this.txtEquipmentDesc);
             this.Controls.Add(this.txtEquipmentName);
             this.Controls.Add(this.txtEquipmentStatus);
@@ -200,7 +189,6 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.TextBox txtEquipmentStatus;
         private System.Windows.Forms.TextBox txtEquipmentName;
         private System.Windows.Forms.TextBox txtEquipmentDesc;
-        private System.Windows.Forms.TextBox txtEquipmentType;
         private System.Windows.Forms.Label label2;
     }
 }
