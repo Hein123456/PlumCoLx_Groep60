@@ -6,9 +6,11 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PlumCoLx_Groep60
 {
@@ -36,77 +38,49 @@ namespace PlumCoLx_Groep60
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to checkout?", "Checkout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-               
-                int orderID = 0;
-                string orderDes = "";
-                try
-                {
-                   
-                    
-                    con.Open();
-                    //get next order number
-
+                // OrderID OrderDate Total Status ClientID Description onto ServiceOrder
+                try { 
+                //generate next order id
+                con.Open();
                     string sql = "SELECT MAX(OrderID) FROM ServiceOrder";
                     cmd = new SqlCommand(sql, con);
                     adapt = new SqlDataAdapter(cmd);
                     adapt.SelectCommand.ExecuteNonQuery();
                     DataSet ds = new DataSet();
-                    adapt.Fill(ds);
-                    orderID = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString()) + 1;
+                    adapt.Fill(ds, "ServiceOrder");
+                    int id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+                    id++;
+                    con.Close();
 
-
+                    double total = subtotal;
+                    string status = "Pending";
+                    DateTime date = DateTime.Now;
+                    string description = "";
                     for (int i = 0; i < tel; i++)
                     {
-                        orderDes += ServiceID[i] +  ", ";
+                        description += ServiceDes[i] + ", ";
+
                     }
-                    con.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-                try
-                {
-                    MessageBox.Show(orderID + "," + Convert.ToInt32(userid) + ", '" + DateTime.Now + "', " + subtotal + ", 'Pending', '" + orderDes);
+                    //userid
                     con.Open();
-
-                    string sql2 = "INSERT INTO ServiceOrder (OrderID, ClientID, OrderDate, Total, Status, Description) " +
-                                  "VALUES (@OrderID, @ClientID, @OrderDate, @Total, @Status, @Description)";
-
+                    // add user to database
+                    string sql2 = "INSERT INTO ServiceOrder (OrderID, OrderDate, Total, Status, ClientID, Description) VALUES (@OrderID, @OrderDate, @Total, @Status, @ClientID, @Description)";
                     cmd = new SqlCommand(sql2, con);
+                    cmd.Parameters.AddWithValue("@OrderID", id);
+                    cmd.Parameters.AddWithValue("@OrderDate", date);
+                    cmd.Parameters.AddWithValue("@Total", total);
+                    cmd.Parameters.AddWithValue("@Status", status);
+                    cmd.Parameters.AddWithValue("@ClientID", userid);
+                    cmd.Parameters.AddWithValue("@Description", description);
 
-                    // Assuming orderID is an integer, userid is an integer, and subtotal is a decimal
-                    cmd.Parameters.AddWithValue("@OrderID", orderID);
-                    cmd.Parameters.AddWithValue("@ClientID", Convert.ToInt32(userid));
-                    cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@Total", subtotal);
-                    cmd.Parameters.AddWithValue("@Status", "Pending");
-                    cmd.Parameters.AddWithValue("@Description", orderDes);
-
-                    // Create a SqlDataAdapter and associate it with the insert command
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    adapter.InsertCommand = cmd;
-
-                    // Execute the insert command using the SqlDataAdapter
-                    adapter.InsertCommand.ExecuteNonQuery();
-
+                    cmd.ExecuteNonQuery();
+                    // create text file with username
                     con.Close();
-                    MessageBox.Show("Order Placed");
-                    textBox1.Text = "";
-                    ServiceID = new string[20];
-                    
+                    MessageBox.Show("Order has been placed");
 
-                    ServiceDes = new string[20];
-                    ServicePrice = new double[20];
-                    tel = 0;
 
-                    subtotal = 0;
-                    listBox1.Items.Clear();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
+                catch (Exception ex) { MessageBox.Show(ex.Message + "\n" + ex.StackTrace); }
             }
             else if (dialogResult == DialogResult.No)
             {
