@@ -246,11 +246,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PlumCo.mdf">
+    <Content Include="PlumCoLX.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="PlumCo_log.ldf">
+    <Content Include="PlumCoLX_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>PlumCoLX.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
