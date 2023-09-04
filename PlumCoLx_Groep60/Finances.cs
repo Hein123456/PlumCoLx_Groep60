@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         {
             InitializeComponent();
 
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCo.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
         }
 
         private void btnPending_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace PlumCoLx_Groep60
             try
             {
                 con.Open();
-                String query = "select *, (select sum(Total) from ServiceOrder WHERE Status = 'Waiting For Payment') as TotalCost from ServiceOrder WHERE Status = 'Waiting For Payment'";
+                String query = "select *, (select sum(Total) from ServiceOrder WHERE Status = 'Waiting For Payment') as TotalCost from ServiceOrder WHERE Status <> 'Delivered'";
 
                 cmd = new SqlCommand(query, con);
                 adap = new SqlDataAdapter(cmd);

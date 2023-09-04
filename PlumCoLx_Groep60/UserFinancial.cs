@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         public UserFinancial()
         {
             InitializeComponent();
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
             string[] lines = File.ReadAllLines("login.txt");
             userid = lines[1];
         }
@@ -52,7 +52,7 @@ namespace PlumCoLx_Groep60
             {
                 con.Open();
                 // display all where the status is Waiting For Payment and create a new field with the total cost of the service
-                String query = "select *, (select sum(Total) from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment') as TotalCost from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment'";
+                String query = "SELECT *, (select sum(Total) FROM ServiceOrder WHERE ClientID = '" + userid + "' and Status = 'Waiting For Payment') as TotalCost from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment'";
         
                 cmd = new SqlCommand(query, con);
                 adapt = new SqlDataAdapter(cmd);
