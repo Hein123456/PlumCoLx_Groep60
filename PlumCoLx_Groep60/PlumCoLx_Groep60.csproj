@@ -246,11 +246,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PlumCoLX.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="PlumCoLX.mdf" />
     <Content Include="PlumCoLX_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PlumCoLX.mdf</DependentUpon>
     </Content>
   </ItemGroup>
