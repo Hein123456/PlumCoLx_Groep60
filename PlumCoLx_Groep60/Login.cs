@@ -20,9 +20,10 @@ namespace PlumCoLx_Groep60
         public Login()
         {
             InitializeComponent();
-            // create absolute path to database
-
+            // initialize connection to database with a relative path
             con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
+
+           
 
         }
 
