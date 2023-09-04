@@ -16,13 +16,13 @@ namespace PlumCoLx_Groep60
 {
     public partial class UserAccountInfo : Form
     {
-        SqlConnection con = new SqlConnection();
+        SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True");
         SqlCommand cmd;
         SqlDataAdapter adapt;
         public UserAccountInfo()
         {
             InitializeComponent();
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
