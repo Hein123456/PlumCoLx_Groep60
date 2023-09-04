@@ -40,6 +40,7 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentName = new System.Windows.Forms.TextBox();
             this.txtEquipmentDesc = new System.Windows.Forms.TextBox();
             this.txtEquipmentType = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +61,9 @@ namespace PlumCoLx_Groep60
             this.label1.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 31);
+            this.label1.Size = new System.Drawing.Size(189, 39);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Suppliers:";
+            this.label1.Text = "Equipment:";
             // 
             // btnAddSup
             // 
@@ -151,11 +152,22 @@ namespace PlumCoLx_Groep60
             this.txtEquipmentType.TabIndex = 12;
             this.txtEquipmentType.Text = "Type";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(482, 469);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(569, 28);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "To add a record insert information into the textboxes.";
+            // 
             // Equipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1597, 800);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEquipmentType);
             this.Controls.Add(this.txtEquipmentDesc);
             this.Controls.Add(this.txtEquipmentName);
@@ -189,5 +201,6 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.TextBox txtEquipmentName;
         private System.Windows.Forms.TextBox txtEquipmentDesc;
         private System.Windows.Forms.TextBox txtEquipmentType;
+        private System.Windows.Forms.Label label2;
     }
 }

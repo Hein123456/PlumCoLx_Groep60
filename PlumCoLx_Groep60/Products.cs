@@ -38,6 +38,17 @@ namespace PlumCoLx_Groep60
                 adap.InsertCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM Product";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvProducts.DataSource = ds;
+                dgvProducts.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -58,6 +69,17 @@ namespace PlumCoLx_Groep60
                 adap.DeleteCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM Product";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvProducts.DataSource = ds;
+                dgvProducts.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -70,7 +92,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Product SET productId = @ID AND SupplierID = @Supplier AND Description = @Desc AND name = @Name AND plumbing_category = @Category AND Price = @Price AND quantity = @Quantity AND dateTime = @DateTime WHERE '" + dgvProducts.SelectedRows + "'";
+                string sql = $"UPDATE Product SET productId = @ID, SupplierID = @Supplier, Description = @Desc, name = @Name, plumbing_category = @Category, Price = @Price, quantity = @Quantity, dateTime = @DateTime WHERE '" + dgvProducts.SelectedRows + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

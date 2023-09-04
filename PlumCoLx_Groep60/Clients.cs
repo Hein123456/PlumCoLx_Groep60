@@ -37,6 +37,17 @@ namespace PlumCoLx_Groep60
                 adap.InsertCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM ClientID";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvClients.DataSource = ds;
+                dgvClients.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -57,6 +68,17 @@ namespace PlumCoLx_Groep60
                 adap.DeleteCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM ClientID";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvClients.DataSource = ds;
+                dgvClients.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -69,7 +91,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE ClientID SET ClientID = @ID AND Name = @Name AND phone_Num = @Number AND Address = @Address AND Password = @Password WHERE '" + dgvClients.SelectedRows + "'";
+                string sql = $"UPDATE ClientID SET ClientID = @ID, Name = @Name, phone_Num = @Number, Address = @Address, Password = @Password WHERE '" + dgvClients.SelectedRows + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

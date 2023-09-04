@@ -39,6 +39,7 @@ namespace PlumCoLx_Groep60
             this.btnRemoveSup = new System.Windows.Forms.Button();
             this.btnEditSup = new System.Windows.Forms.Button();
             this.btnAddSup = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,11 +142,22 @@ namespace PlumCoLx_Groep60
             this.btnAddSup.UseVisualStyleBackColor = true;
             this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(471, 454);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(455, 22);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "To add a record insert information into the textboxes.";
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1613, 801);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtPhoneNum);
             this.Controls.Add(this.txtAddress);
@@ -176,5 +188,6 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.Button btnRemoveSup;
         private System.Windows.Forms.Button btnEditSup;
         private System.Windows.Forms.Button btnAddSup;
+        private System.Windows.Forms.Label label2;
     }
 }
