@@ -37,6 +37,17 @@ namespace PlumCoLx_Groep60
                 adap.InsertCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM Employee";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvPlumbers.DataSource = ds;
+                dgvPlumbers.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -57,6 +68,17 @@ namespace PlumCoLx_Groep60
                 adap.DeleteCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM Employee";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvPlumbers.DataSource = ds;
+                dgvPlumbers.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -69,7 +91,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Employee SET employeeId = @ID AND Name = @Name AND Surname = @Surname AND phoneNum = @Number AND Email_address = @Email AND Driverse_lisense = @Drivers AND Allergies = @Allergies AND Criminal_Record = @Criminal AND Medical_History = @Medical AND Maritial_Status = @Married AND Emergency_Contact = @Emergency AND Position = @Position WHERE '" + dgvPlumbers.SelectedRows + "'";
+                string sql = $"UPDATE Employee SET employeeId = @ID, Name = @Name, Surname = @Surname, phoneNum = @Number, Email_address = @Email, Driverse_lisense = @Drivers, Allergies = @Allergies, Criminal_Record = @Criminal, Medical_History = @Medical, Maritial_Status = @Married, Emergency_Contact = @Emergency, Position = @Position WHERE '" + dgvPlumbers.SelectedRows + "'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

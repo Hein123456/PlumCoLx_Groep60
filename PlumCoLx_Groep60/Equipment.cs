@@ -39,6 +39,17 @@ namespace PlumCoLx_Groep60
                 adap.InsertCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM Equipment";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvEquipment.DataSource = ds;
+                dgvEquipment.DataMember = "user";
+                con.Close();
             }
             catch(SqlException ex)
             {
@@ -59,6 +70,17 @@ namespace PlumCoLx_Groep60
                 adap.DeleteCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                con.Open();
+                string query = "SELECT * FROM Equipment";
+                adap = new SqlDataAdapter(query, con);
+                adap.SelectCommand.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+
+                adap.Fill(ds, "User");
+                dgvEquipment.DataSource = ds;
+                dgvEquipment.DataMember = "user";
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -71,7 +93,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Equipment SET EquipmentId = @ID AND eqPrice = @Price AND eqType = @Type AND eqDescription = @Desc AND eqName = @Name AND eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
+                string sql = $"UPDATE Equipment SET EquipmentId = @ID, eqPrice = @Price, eqType = @Type, eqDescription = @Desc, eqName = @Name, eqStatus = @Status WHERE '"+ dgvEquipment.SelectedRows +"'";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

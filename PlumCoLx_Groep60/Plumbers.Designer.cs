@@ -46,6 +46,7 @@ namespace PlumCoLx_Groep60
             this.txtAllergies = new System.Windows.Forms.TextBox();
             this.txtDriverLicense = new System.Windows.Forms.TextBox();
             this.txtEmpEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlumbers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,11 +212,22 @@ namespace PlumCoLx_Groep60
             this.txtEmpEmail.TabIndex = 47;
             this.txtEmpEmail.Text = "Email Address";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(696, 415);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(455, 22);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "To add a record insert information into the textboxes.";
+            // 
             // Plumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1611, 801);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmpEmail);
             this.Controls.Add(this.txtDriverLicense);
             this.Controls.Add(this.txtAllergies);
@@ -260,5 +272,6 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.TextBox txtAllergies;
         private System.Windows.Forms.TextBox txtDriverLicense;
         private System.Windows.Forms.TextBox txtEmpEmail;
+        private System.Windows.Forms.Label label2;
     }
 }
