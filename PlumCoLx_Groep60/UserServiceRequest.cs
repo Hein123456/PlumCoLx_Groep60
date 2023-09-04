@@ -67,7 +67,7 @@ namespace PlumCoLx_Groep60
                 }
                 try
                 {
-                    MessageBox.Show(orderID + "," + Convert.ToInt32(userid) + ", '" + DateTime.Now + "', " + subtotal + ", 'Pending', '" + orderDes);
+                   
                     con.Open();
 
                     string sql2 = "INSERT INTO ServiceOrder (OrderID, ClientID, OrderDate, Total, Status, Description) " +

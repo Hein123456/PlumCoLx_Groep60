@@ -87,5 +87,10 @@ namespace PlumCoLx_Groep60
             }   
 
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

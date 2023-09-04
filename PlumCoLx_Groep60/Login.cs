@@ -20,9 +20,10 @@ namespace PlumCoLx_Groep60
         public Login()
         {
             InitializeComponent();
-            // create absolute path to database
-
+            // initialize connection to database with a relative path
             con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\PlumCoLX.mdf; Integrated Security = True";
+
+           
 
         }
 
@@ -46,7 +47,7 @@ namespace PlumCoLx_Groep60
                 String Username = textBox1.Text;
                 String Password = textBox2.Text;
                 //check if user exists
-                bool userExists = false;
+                
                
                     con.Open();
                     //sql to check if user exists
@@ -66,7 +67,7 @@ namespace PlumCoLx_Groep60
 
                 int id = (int)ds.Tables[0].Rows[0]["ClientID"];
                 //user exists
-                userExists = true;
+              
                         //create text file
                         // owerwrite file if it exists
                         string path = "login.txt";
@@ -103,7 +104,7 @@ namespace PlumCoLx_Groep60
                         if (count2 == 1)
                         {
                             //admin exists
-                            userExists = true;
+                           
                             //create text file
                             using (StreamWriter sw = File.CreateText("login.txt"))
                             {
