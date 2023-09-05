@@ -28,6 +28,8 @@ namespace PlumCoLx_Groep60
 
         private void UserFinancial_Load(object sender, EventArgs e)
         {
+            textBox1.Visible = false;
+            label2.Visible = false;
             //display all pending services from the ServiceOrder table where the client id is the same as the logged in user in the datagridview
             try
             {
@@ -47,12 +49,15 @@ namespace PlumCoLx_Groep60
 
         private void button3_Click(object sender, EventArgs e)
         {
+            textBox1.Visible = true;
+            label2.Visible = true;
             //display all pending services from the ServiceOrder table where the client id is the same as the logged in user in the datagridview
             try
             {
                 con.Open();
-                // display all where the status is Waiting For Payment and create a new field with the total cost of the service
-                String query = "SELECT *, (select sum(Total) FROM ServiceOrder WHERE ClientID = '" + userid + "' and Status = 'Waiting For Payment') as TotalCost from ServiceOrder where ClientID = '" + userid + "' and Status = 'Waiting For Payment'";
+                // display all records where status is not equal to Done, and where the client id is the same as the logged in user
+                String query = "select * from ServiceOrder where Status <> 'Done' and ClientID = '" + userid + "'";
+               
         
                 cmd = new SqlCommand(query, con);
                 adapt = new SqlDataAdapter(cmd);
@@ -62,12 +67,25 @@ namespace PlumCoLx_Groep60
                 dataGridView1.DataSource = ds;
                 dataGridView1.DataMember = "ServiceOrder";
                 con.Close();
+                // display the sum total amount of all the pending services in textbox1
+                con.Open();
+                String query2 = "select sum(Total) from ServiceOrder where Status <> 'Done' and ClientID = '" + userid + "'";
+                cmd = new SqlCommand(query2, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    textBox1.Text = reader[0].ToString();
+                }
+                con.Close();
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox1.Visible = false;
+            label2.Visible = false;
             try
             {
                 con.Open();
