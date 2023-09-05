@@ -29,7 +29,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"INSERT INTO ClientID VALUES('{Convert.ToInt32(txtClientID.Text)}','{txtClientName.Text}','{txtPhoneNum.Text}','{txtAddress.Text},'{txtPassword.Text}')";
+                string sql = $"INSERT INTO ClientID VALUES('{Convert.ToInt32(txtClientID.Text)}','{txtClientName.Text}','{txtPhoneNum.Text}','{txtAddress.Text}','{txtPassword.Text}')";
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -60,7 +60,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = "DELETE FROM ClientID WHERE ClientID = '" + +Convert.ToInt32(txtClientID.Text) + "'";
+                string sql = "DELETE FROM ClientID WHERE ClientID = "  +Convert.ToInt32(txtClientID.Text) ;
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
@@ -91,7 +91,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE ClientID SET ClientID = @ID, Name = @Name, phone_Num = @Number, Address = @Address, Password = @Password WHERE '" + +Convert.ToInt32(txtClientID.Text) + "'";
+                string sql = $"UPDATE ClientID SET ClientID = @ID, Name = @Name, phone_Num = @Number, Address = @Address, Password = @Password WHERE ClientID = "  + Convert.ToInt32(txtClientID.Text);
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

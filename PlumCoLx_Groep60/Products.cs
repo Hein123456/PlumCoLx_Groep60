@@ -92,7 +92,7 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Product SET productId = @ID, SupplierID = @Supplier, Description = @Desc, name = @Name, plumbing_category = @Category, Price = @Price, quantity = @Quantity, dateTime = @DateTime WHERE '" + +Convert.ToInt32(txtProductID.Text) + "'";
+                string sql = $"UPDATE Product SET productId = @ID, SupplierID = @Supplier, Description = @Desc, name = @Name, plumbing_category = @Category, Price = @Price, quantity = @Quantity, dateTime = @DateTime WHERE ProductID = "  +Convert.ToInt32(txtProductID.Text);
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);

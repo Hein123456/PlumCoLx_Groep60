@@ -91,14 +91,14 @@ namespace PlumCoLx_Groep60
             try
             {
 
-                string sql = $"UPDATE Jobs SET JobId = @ID, ClientID = @Client, description = @Desc, status = @Status WHERE '" + +Convert.ToInt32(txtJobID.Text) + "'";
+                string sql = $"UPDATE Jobs SET JobId = @ID, ClientID = @Client, description = @Desc, status = @Status WHERE JobID = "  +Convert.ToInt32(txtJobID.Text);
                 con.Open();
 
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtJobID.Text));
-                cmd.Parameters.AddWithValue("@Supplier", Convert.ToInt32(txtClientID.Text));
+                cmd.Parameters.AddWithValue("@Client", Convert.ToInt32(txtClientID.Text));
                 cmd.Parameters.AddWithValue("@Desc", txtJobDesc.Text);
-                cmd.Parameters.AddWithValue("@Name", txtJobStatus.Text);
+                cmd.Parameters.AddWithValue("@Status", txtJobStatus.Text);
                 cmd.ExecuteNonQuery();
 
                 con.Close();
