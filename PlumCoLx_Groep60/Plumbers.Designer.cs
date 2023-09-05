@@ -44,6 +44,8 @@ namespace PlumCoLx_Groep60
             this.txtDriverLicense = new System.Windows.Forms.TextBox();
             this.txtEmpEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtNumEmp = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlumbers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +113,7 @@ namespace PlumCoLx_Groep60
             this.btnRemoveSup.Name = "btnRemoveSup";
             this.btnRemoveSup.Size = new System.Drawing.Size(218, 85);
             this.btnRemoveSup.TabIndex = 35;
-            this.btnRemoveSup.Text = "Remove supplier";
+            this.btnRemoveSup.Text = "Remove Plumber";
             this.btnRemoveSup.UseVisualStyleBackColor = true;
             this.btnRemoveSup.Click += new System.EventHandler(this.btnRemoveSup_Click);
             // 
@@ -122,7 +124,7 @@ namespace PlumCoLx_Groep60
             this.btnEditSup.Name = "btnEditSup";
             this.btnEditSup.Size = new System.Drawing.Size(218, 88);
             this.btnEditSup.TabIndex = 34;
-            this.btnEditSup.Text = "Edit Supplier";
+            this.btnEditSup.Text = "Edit Plumber";
             this.btnEditSup.UseVisualStyleBackColor = true;
             this.btnEditSup.Click += new System.EventHandler(this.btnEditSup_Click);
             // 
@@ -133,7 +135,7 @@ namespace PlumCoLx_Groep60
             this.btnAddSup.Name = "btnAddSup";
             this.btnAddSup.Size = new System.Drawing.Size(218, 85);
             this.btnAddSup.TabIndex = 33;
-            this.btnAddSup.Text = "Add supplier";
+            this.btnAddSup.Text = "Add Plumber";
             this.btnAddSup.UseVisualStyleBackColor = true;
             this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
             // 
@@ -192,11 +194,29 @@ namespace PlumCoLx_Groep60
             this.label2.TabIndex = 48;
             this.label2.Text = "To add a record insert information into the textboxes.";
             // 
+            // txtNumEmp
+            // 
+            this.txtNumEmp.Location = new System.Drawing.Point(463, 330);
+            this.txtNumEmp.Name = "txtNumEmp";
+            this.txtNumEmp.Size = new System.Drawing.Size(100, 22);
+            this.txtNumEmp.TabIndex = 49;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(460, 311);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 20);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Number of Employees";
+            // 
             // Plumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1611, 801);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNumEmp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmpEmail);
             this.Controls.Add(this.txtDriverLicense);
@@ -237,5 +257,7 @@ namespace PlumCoLx_Groep60
         private System.Windows.Forms.TextBox txtDriverLicense;
         private System.Windows.Forms.TextBox txtEmpEmail;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNumEmp;
+        private System.Windows.Forms.Label label3;
     }
 }

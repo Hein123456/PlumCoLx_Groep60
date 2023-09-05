@@ -186,6 +186,14 @@ namespace PlumCoLx_Groep60
             dgvPlumbers.DataSource = ds;
             dgvPlumbers.DataMember = "user";
             con.Close();
+            // display the number of employees in txtNumEmp, get the number from the number of rows in the table Employee
+            con.Open();
+            string query2 = "SELECT COUNT(*) FROM Employee";
+            cmd = new SqlCommand(query2, con);
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            txtNumEmp.Text = count.ToString();
+            con.Close();
+
         }
     }
 }

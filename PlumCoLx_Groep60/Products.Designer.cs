@@ -128,18 +128,18 @@ namespace PlumCoLx_Groep60
             this.btnRemoveSup.Name = "btnRemoveSup";
             this.btnRemoveSup.Size = new System.Drawing.Size(218, 85);
             this.btnRemoveSup.TabIndex = 15;
-            this.btnRemoveSup.Text = "Remove supplier";
+            this.btnRemoveSup.Text = "Remove Product";
             this.btnRemoveSup.UseVisualStyleBackColor = true;
             this.btnRemoveSup.Click += new System.EventHandler(this.btnRemoveSup_Click);
             // 
             // btnEditSup
             // 
             this.btnEditSup.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditSup.Location = new System.Drawing.Point(17, 393);
+            this.btnEditSup.Location = new System.Drawing.Point(17, 387);
             this.btnEditSup.Name = "btnEditSup";
             this.btnEditSup.Size = new System.Drawing.Size(218, 88);
             this.btnEditSup.TabIndex = 14;
-            this.btnEditSup.Text = "Edit Supplier";
+            this.btnEditSup.Text = "Edit Product";
             this.btnEditSup.UseVisualStyleBackColor = true;
             this.btnEditSup.Click += new System.EventHandler(this.btnEditSup_Click);
             // 
@@ -150,7 +150,7 @@ namespace PlumCoLx_Groep60
             this.btnAddSup.Name = "btnAddSup";
             this.btnAddSup.Size = new System.Drawing.Size(218, 85);
             this.btnAddSup.TabIndex = 13;
-            this.btnAddSup.Text = "Add supplier";
+            this.btnAddSup.Text = "Add Product";
             this.btnAddSup.UseVisualStyleBackColor = true;
             this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
             // 

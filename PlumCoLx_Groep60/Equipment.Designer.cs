@@ -71,7 +71,7 @@ namespace PlumCoLx_Groep60
             this.btnAddSup.Name = "btnAddSup";
             this.btnAddSup.Size = new System.Drawing.Size(218, 85);
             this.btnAddSup.TabIndex = 4;
-            this.btnAddSup.Text = "Add supplier";
+            this.btnAddSup.Text = "Add Equipment";
             this.btnAddSup.UseVisualStyleBackColor = true;
             this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
             // 
@@ -82,7 +82,7 @@ namespace PlumCoLx_Groep60
             this.btnEditSup.Name = "btnEditSup";
             this.btnEditSup.Size = new System.Drawing.Size(218, 88);
             this.btnEditSup.TabIndex = 5;
-            this.btnEditSup.Text = "Edit Supplier";
+            this.btnEditSup.Text = "Edit  Equipment";
             this.btnEditSup.UseVisualStyleBackColor = true;
             this.btnEditSup.Click += new System.EventHandler(this.btnEditSup_Click);
             // 
@@ -93,7 +93,7 @@ namespace PlumCoLx_Groep60
             this.btnRemoveSup.Name = "btnRemoveSup";
             this.btnRemoveSup.Size = new System.Drawing.Size(218, 85);
             this.btnRemoveSup.TabIndex = 6;
-            this.btnRemoveSup.Text = "Remove supplier";
+            this.btnRemoveSup.Text = "Remove  Equipment";
             this.btnRemoveSup.UseVisualStyleBackColor = true;
             this.btnRemoveSup.Click += new System.EventHandler(this.btnRemoveSup_Click);
             // 
