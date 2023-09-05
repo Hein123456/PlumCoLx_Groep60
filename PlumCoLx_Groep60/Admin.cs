@@ -111,5 +111,10 @@ namespace PlumCoLx_Groep60
             login.Show();
             this.Hide();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

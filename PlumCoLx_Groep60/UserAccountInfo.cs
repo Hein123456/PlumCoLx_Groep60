@@ -22,7 +22,7 @@ namespace PlumCoLx_Groep60
         public UserAccountInfo()
         {
             InitializeComponent();
-           con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
+           con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PlumCoLX.mdf;Integrated Security=True";
         }
 
         private void label1_Click(object sender, EventArgs e)

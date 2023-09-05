@@ -21,7 +21,7 @@ namespace PlumCoLx_Groep60
         public UserServiceTracking()
         {
             InitializeComponent();
-           con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\37419935\Desktop\Hein123456\PlumCoLx_Groep60\PlumCoLx_Groep60\PlumCoLX.mdf;Integrated Security=True";
+           con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PlumCoLX.mdf;Integrated Security=True";
             string[] lines = File.ReadAllLines("login.txt");
             userid = lines[1];
         }

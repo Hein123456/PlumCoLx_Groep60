@@ -37,9 +37,9 @@ namespace PlumCoLx_Groep60
             this.plumbersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.switchUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.switchUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +103,13 @@ namespace PlumCoLx_Groep60
             this.financesToolStripMenuItem.Text = "Finances";
             this.financesToolStripMenuItem.Click += new System.EventHandler(this.financesToolStripMenuItem_Click);
             // 
+            // switchUserToolStripMenuItem
+            // 
+            this.switchUserToolStripMenuItem.Name = "switchUserToolStripMenuItem";
+            this.switchUserToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.switchUserToolStripMenuItem.Text = "Switch user";
+            this.switchUserToolStripMenuItem.Click += new System.EventHandler(this.switchUserToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -116,13 +123,6 @@ namespace PlumCoLx_Groep60
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // switchUserToolStripMenuItem
-            // 
-            this.switchUserToolStripMenuItem.Name = "switchUserToolStripMenuItem";
-            this.switchUserToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
-            this.switchUserToolStripMenuItem.Text = "Switch user";
-            this.switchUserToolStripMenuItem.Click += new System.EventHandler(this.switchUserToolStripMenuItem_Click);
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,6 +134,7 @@ namespace PlumCoLx_Groep60
             this.Name = "Admin";
             this.Text = "Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
