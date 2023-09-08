@@ -131,7 +131,12 @@ namespace PlumCoLx_Groep60
 
         private void Login_Load(object sender, EventArgs e)
         {
-           
+            try
+            {
+                con.Open();
+                con.Close();
+            }
+            catch (SqlException ex){ MessageBox.Show(ex.Message); }
                 
         }
 
